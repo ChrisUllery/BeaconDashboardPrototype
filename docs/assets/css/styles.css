@@ -1,0 +1,640 @@
+:root {
+    --background: #f3f5f7;
+    --surface: #ffffff;
+    --border: #dce2e8;
+    --text: #202c38;
+    --muted: #667586;
+    --accent: #176b75;
+    --accent-light: #e4f1f1;
+    --republican: #be5656;
+    --democrat: #4879b9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+h1, h2, h3, p {
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 27px;
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-size: 17px;
+}
+
+h3 {
+    font-size: 15px;
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 28px;
+    background: #172b3b;
+    color: #ffffff;
+}
+
+.site-header p {
+    margin: 4px 0 0;
+    color: #b9c9d4;
+}
+
+.brand {
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.brand span {
+    font-size: 15px;
+    font-weight: 400;
+    color: #b9d9dd;
+    margin-left: 12px;
+}
+
+.demo-badge {
+    border: 1px solid #83b6bd;
+    color: #c3eef1;
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 225px minmax(400px, 1fr) 310px;
+    min-height: calc(100vh - 130px);
+    max-width: 1800px;
+    margin: auto;
+}
+
+.sidebar,
+.results-panel,
+.tools-panel {
+    padding: 24px;
+}
+
+.sidebar {
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+}
+
+.tools-panel {
+    background: var(--surface);
+    border-left: 1px solid var(--border);
+}
+
+.section-note,
+.tool-note {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.eyebrow {
+    color: var(--accent);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.race-item {
+    padding: 13px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    margin-bottom: 9px;
+    background: #ffffff;
+}
+
+.race-item strong,
+.race-item span {
+    display: block;
+}
+
+.race-item span {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.race-item.selected {
+    background: var(--accent-light);
+    border-color: var(--accent);
+    border-left: 4px solid var(--accent);
+}
+
+.sidebar-footer {
+    border-top: 1px solid var(--border);
+    margin-top: 30px;
+    padding-top: 20px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.sidebar-footer p {
+    margin: 5px 0;
+}
+
+.status-strip {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    background: var(--accent-light);
+    color: #25565c;
+    border-radius: 7px;
+    padding: 10px 14px;
+    font-size: 12px;
+    margin: 20px 0;
+}
+
+.candidate-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.candidate-card {
+    background: var(--surface);
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-top: 4px solid;
+    border-radius: 8px;
+}
+
+.candidate-card.republican {
+    border-top-color: var(--republican);
+}
+
+.candidate-card.democrat {
+    border-top-color: var(--democrat);
+}
+
+.party-label {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--muted);
+}
+
+.candidate-card h3 {
+    margin: 8px 0;
+}
+
+.vote-number {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.vote-percent {
+    color: var(--muted);
+    font-weight: bold;
+}
+
+.results-bar {
+    display: flex;
+    height: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 14px 0 24px;
+}
+
+.republican-bar {
+    width: 56.4%;
+    background: var(--republican);
+}
+
+.democrat-bar {
+    width: 43.6%;
+    background: var(--democrat);
+}
+
+.panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 18px;
+}
+
+.panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.small-tag {
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 4px 9px;
+    border-radius: 5px;
+    font-size: 11px;
+}
+
+.map-placeholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 370px;
+    background: #edf1f3;
+    border: 1px dashed #b4c4ca;
+    border-radius: 6px;
+    color: var(--muted);
+    text-align: center;
+}
+
+.map-placeholder p {
+    margin: 5px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px 9px;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    background: #f4f6f8;
+    font-size: 12px;
+}
+
+.tool-section {
+    border-top: 1px solid var(--border);
+    padding: 20px 0;
+}
+
+.history-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.tool-note {
+    margin-top: 15px;
+}
+
+.generated-copy {
+    background: #f5f7f8;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 15px;
+    line-height: 1.7;
+    font-size: 13px;
+}
+
+.site-footer {
+    padding: 14px;
+    text-align: center;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    font-size: 11px;
+}
+
+@media (max-width: 1100px) {
+    .dashboard {
+        grid-template-columns: 200px minmax(0, 1fr);
+    }
+
+    .tools-panel {
+        grid-column: 1 / -1;
+        border-top: 1px solid var(--border);
+    }
+}
+
+@media (max-width: 700px) {
+    .dashboard {
+        display: block;
+    }
+
+    .candidate-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar,
+    .results-panel,
+    .tools-panel {
+        padding: 18px;
+    }
+
+    .site-header {
+        padding: 16px;
+    }
+}
+
+/* Interactive precinct map */
+
+.precinct-map {
+    width: 100%;
+    max-width: 690px;
+    height: 640px;
+    margin: 0 auto;
+    background: #f7f9fb;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    z-index: 0;
+}
+
+.map-status {
+    color: var(--muted);
+    font-size: 12px;
+    margin: 10px 0 0;
+}
+
+.margin-legend {
+    background: white;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    width: 185px;
+    font-size: 12px;
+}
+
+.margin-legend-bar {
+    height: 13px;
+    margin: 10px 0 5px;
+    border-radius: 3px;
+    background: linear-gradient(
+        to right,
+        #2166ac,
+        #92c5de,
+        #f7f7f7,
+        #f4a582,
+        #b2182b
+    );
+}
+
+.margin-legend-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+}
+
+.margin-legend small {
+    display: block;
+    margin-top: 7px;
+    color: #667586;
+}
+
+.precinct-popup {
+    font-size: 13px;
+    line-height: 1.7;
+    min-width: 190px;
+}
+
+.precinct-popup hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 8px 0;
+}
+
+
+
+/* Legend beneath the map */
+.map-panel .margin-legend {
+    width: 240px;
+    margin: 12px auto;
+    box-shadow: none;
+}
+
+
+/* Boundary-aware precinct hover box */
+
+.precinct-hover-card {
+    position: absolute;
+    z-index: 1100;
+    width: max-content;
+    max-width: calc(100% - 16px);
+    padding: 10px 13px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+    color: #202c38;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    pointer-events: none;
+}
+
+.precinct-hover-card[hidden] {
+    display: none;
+}
+
+
+/* Functional race selectors */
+
+.race-item {
+    cursor: pointer;
+}
+
+.race-item:hover {
+    border-color: var(--accent);
+}
+
+.race-item:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Support two- and three-candidate races */
+
+.candidate-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.candidate-card.other {
+    border-top-color: #888888;
+}
+
+
+
+/* 2026 election-night simulation dashboard. Existing map dimensions preserved. */
+.race-group-title {
+    margin: 22px 0 8px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-size: 11px;
+}
+.race-group-title:first-child { margin-top: 13px; }
+.race-item {
+    display: block;
+    width: 100%;
+    font: inherit;
+    text-align: left;
+    color: var(--text);
+}
+.race-item strong { font-size: 12px; }
+.race-item span { font-size: 11px; }
+.candidate-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+.candidate-card { min-width: 0; padding: 16px; }
+.candidate-card h3 { overflow-wrap: anywhere; }
+.vote-number { font-size: clamp(22px, 2.2vw, 30px); }
+.county-table-wrap { overflow-x: auto; }
+#county-results th, #county-results td { white-space: nowrap; }
+.county-vote-share {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+}
+#history-results .history-row { gap: 8px; }
+#history-results .history-row small {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+}
+#history-results .history-row strong { white-space: nowrap; }
+.generated-copy { white-space: pre-line; }
+.copy-summary {
+    margin-top: 12px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background: var(--accent);
+    color: white;
+    border: 1px solid var(--accent);
+    font: inherit;
+    cursor: pointer;
+}
+.copy-summary:disabled { opacity: 0.55; cursor: default; }
+.copy-summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.legend-special { display: flex; flex-wrap: wrap; gap: 7px 12px; margin-top: 10px; }
+.legend-special span { display: inline-flex; align-items: center; gap: 5px; }
+.legend-special i { width: 12px; height: 12px; display: inline-block; border: 1px solid #6b7680; }
+@media (max-width: 700px) {
+    .precinct-map { height: 490px; }
+}
+
+
+/* Race and geography navigation, 2026 */
+.nav-field { margin-top: 18px; }
+.nav-field label { display: block; font-size: 12px; font-weight: 700; margin-bottom: 7px; }
+.nav-field select { display: block; width: 100%; min-width: 0; padding: 9px 7px;
+    background: #fff; border: 1px solid var(--border); border-radius: 6px;
+    color: var(--text); font: inherit; font-size: 12px; }
+.nav-field select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+#geography-hint { margin: 8px 0 0; font-size: 11px; line-height: 1.5; }
+[hidden] { display: none !important; }
+#overview-table { min-width: 500px; }
+#overview-table th, #overview-table td { padding: 10px 7px; font-size: 12px; }
+.overview-race-link { border: 0; padding: 0; color: var(--accent); font: inherit; cursor: pointer;
+    background: none; text-decoration: underline; text-underline-offset: 2px; text-align: left; }
+.overview-race-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Self-hosted Census towns above precinct results */
+.beacon-town-marker {
+    background: transparent;
+    border: 0;
+    pointer-events: none !important;
+}
+.beacon-town-text {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+    color: #28333c;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+    text-shadow: -1px -1px 2px #fff, 1px -1px 2px #fff,
+                 -1px 1px 2px #fff, 1px 1px 2px #fff;
+    pointer-events: none !important;
+}
+.beacon-town-text.smaller {
+    color: #58636b;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+/* Readable election-night reporting briefs and historical percentages. */
+.history-row small {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #293d4d;
+    margin-top: 3px;
+}
+.history-row strong {
+    font-size: 15px;
+    font-variant-numeric: tabular-nums;
+}
+.generated-copy.briefing-mode {
+    padding: 0;
+    background: transparent;
+    border: 0;
+}
+.briefing-warning {
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    color: #6a3640;
+    margin: 0 0 12px;
+}
+.briefing-section {
+    background: #f7f9fa;
+    border: 1px solid var(--border, #dce2e8);
+    border-radius: 6px;
+    padding: 13px;
+    margin-bottom: 12px;
+}
+.briefing-section-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 7px;
+}
+.briefing-section h4 {
+    margin: 0;
+    color: #243849;
+    font-size: 13px;
+}
+.briefing-section p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.65;
+}
+.briefing-copy-one {
+    background: #fff;
+    border: 1px solid #cad4da;
+    border-radius: 4px;
+    color: #244653;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-size: 11px;
+    padding: 3px 6px;
+}
+.briefing-copy-one:hover,
+.briefing-copy-one:focus-visible { border-color: #176b75; }
+.briefing-error {
+    font-size: 12px;
+    font-weight: 700;
+    color: #9c3131;
+}

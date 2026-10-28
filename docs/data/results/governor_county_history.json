@@ -1,0 +1,241 @@
+{
+  "source": "Official Pennsylvania Department of State precinct-level general election returns",
+  "scope": "Bucks, Lehigh and Montgomery counties; statewide 2022 governor and 2024 president totals also included for validation",
+  "note": "Percentages use all named candidates in the returns; write-in votes are excluded. 2026 returns are simulated and cover only three counties.",
+  "elections": [
+    {
+      "election_year": 2022,
+      "office": "Governor",
+      "office_code": "GOV",
+      "statewide_candidates": [
+        {
+          "name": "Joshua Shapiro",
+          "party": "DEM",
+          "votes": 3031032
+        },
+        {
+          "name": "Douglas Mastriano",
+          "party": "REP",
+          "votes": 2238337
+        },
+        {
+          "name": "Jonathan Hackenburg",
+          "party": "LIB",
+          "votes": 51607
+        },
+        {
+          "name": "Christina Digiulio",
+          "party": "GRN",
+          "votes": 24436
+        },
+        {
+          "name": "Joseph Soloski",
+          "party": "KEY",
+          "votes": 20517
+        }
+      ],
+      "county_totals": [
+        {
+          "county_code": 9,
+          "county_name": "Bucks",
+          "candidates": [
+            {
+              "name": "Joshua Shapiro",
+              "party": "DEM",
+              "votes": 185339
+            },
+            {
+              "name": "Douglas Mastriano",
+              "party": "REP",
+              "votes": 122982
+            },
+            {
+              "name": "Jonathan Hackenburg",
+              "party": "LIB",
+              "votes": 2935
+            },
+            {
+              "name": "Christina Digiulio",
+              "party": "GRN",
+              "votes": 1694
+            },
+            {
+              "name": "Joseph Soloski",
+              "party": "KEY",
+              "votes": 1091
+            }
+          ]
+        },
+        {
+          "county_code": 39,
+          "county_name": "Lehigh",
+          "candidates": [
+            {
+              "name": "Joshua Shapiro",
+              "party": "DEM",
+              "votes": 79991
+            },
+            {
+              "name": "Douglas Mastriano",
+              "party": "REP",
+              "votes": 53468
+            },
+            {
+              "name": "Jonathan Hackenburg",
+              "party": "LIB",
+              "votes": 1591
+            },
+            {
+              "name": "Christina Digiulio",
+              "party": "GRN",
+              "votes": 734
+            },
+            {
+              "name": "Joseph Soloski",
+              "party": "KEY",
+              "votes": 550
+            }
+          ]
+        },
+        {
+          "county_code": 46,
+          "county_name": "Montgomery",
+          "candidates": [
+            {
+              "name": "Joshua Shapiro",
+              "party": "DEM",
+              "votes": 285712
+            },
+            {
+              "name": "Douglas Mastriano",
+              "party": "REP",
+              "votes": 121289
+            },
+            {
+              "name": "Jonathan Hackenburg",
+              "party": "LIB",
+              "votes": 3463
+            },
+            {
+              "name": "Christina Digiulio",
+              "party": "GRN",
+              "votes": 1384
+            },
+            {
+              "name": "Joseph Soloski",
+              "party": "KEY",
+              "votes": 1168
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "election_year": 2024,
+      "office": "President",
+      "office_code": "USP",
+      "statewide_candidates": [
+        {
+          "name": "Donald Trump",
+          "party": "REP",
+          "votes": 3543041
+        },
+        {
+          "name": "Kamala Harris",
+          "party": "DEM",
+          "votes": 3420865
+        },
+        {
+          "name": "Jill Stein",
+          "party": "GRN",
+          "votes": 34514
+        },
+        {
+          "name": "Chase Oliver",
+          "party": "LIB",
+          "votes": 33317
+        }
+      ],
+      "county_totals": [
+        {
+          "county_code": 9,
+          "county_name": "Bucks",
+          "candidates": [
+            {
+              "name": "Donald Trump",
+              "party": "REP",
+              "votes": 198722
+            },
+            {
+              "name": "Kamala Harris",
+              "party": "DEM",
+              "votes": 198431
+            },
+            {
+              "name": "Jill Stein",
+              "party": "GRN",
+              "votes": 1971
+            },
+            {
+              "name": "Chase Oliver",
+              "party": "LIB",
+              "votes": 1904
+            }
+          ]
+        },
+        {
+          "county_code": 39,
+          "county_name": "Lehigh",
+          "candidates": [
+            {
+              "name": "Kamala Harris",
+              "party": "DEM",
+              "votes": 96317
+            },
+            {
+              "name": "Donald Trump",
+              "party": "REP",
+              "votes": 91207
+            },
+            {
+              "name": "Jill Stein",
+              "party": "GRN",
+              "votes": 1431
+            },
+            {
+              "name": "Chase Oliver",
+              "party": "LIB",
+              "votes": 855
+            }
+          ]
+        },
+        {
+          "county_code": 46,
+          "county_name": "Montgomery",
+          "candidates": [
+            {
+              "name": "Kamala Harris",
+              "party": "DEM",
+              "votes": 317103
+            },
+            {
+              "name": "Donald Trump",
+              "party": "REP",
+              "votes": 198311
+            },
+            {
+              "name": "Jill Stein",
+              "party": "GRN",
+              "votes": 2984
+            },
+            {
+              "name": "Chase Oliver",
+              "party": "LIB",
+              "votes": 2508
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

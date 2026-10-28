@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beacon Election Dashboard | Prototype</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/embed.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div>
+        <div class="brand">THE BEACON <span>Election Desk</span></div>
+        <p>Election results dashboard and reporting tools</p>
+    </div>
+    <span class="demo-badge">2026 SIMULATED DEMO</span>
+</header>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+        <h2>Tracked Races</h2>
+        <p class="section-note">Select a race to examine results.</p>
+
+        <div class="nav-field">
+            <label for="race-select">Race selection</label>
+            <select id="race-select" aria-label="Select an election race">
+                <option>Loading races...</option>
+            </select>
+        </div>
+        <div class="nav-field">
+            <label for="geography-select">Map geography</label>
+            <select id="geography-select" aria-label="Select map detail">
+                <option value="race">Entire district overview</option>
+                <option value="county">County results</option>
+                <option value="precinct">Precinct results</option>
+            </select>
+            <p id="geography-hint" class="section-note">Select a race to see its geography.</p>
+        </div>
+
+        <div class="sidebar-footer">
+            <strong>Data source</strong>
+            <p>Pennsylvania Department of State</p>
+            <p>2026 results are simulated for testing, not actual election returns.</p>
+        </div>
+    </aside>
+
+    <main class="results-panel">
+
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">U.S. Congress</p>
+                <h1>2026 Election Results</h1>
+                <p class="section-note">
+                    2026 General Election | Simulated demonstration
+                </p>
+            </div>
+        </div>
+
+        <div class="status-strip">
+            <span>Loading simulated election returns...</span>
+        </div>
+
+        <div class="candidate-grid" aria-label="Candidate results"></div>
+
+        <div class="results-bar" aria-label="Candidate vote shares"></div>
+
+        <section class="panel map-panel">
+            <div class="panel-heading">
+                <h2>Precinct Results Map</h2>
+                <span class="small-tag">Simulated 2026 Results</span>
+            </div>
+
+            <div id="precinct-map" class="precinct-map" aria-label="Interactive precinct results map"></div>
+<p id="map-status" class="map-status" role="status">Loading precinct map...</p>
+        </section>
+
+        <section class="panel" id="overview-results" hidden>
+            <h2>Tracked races at a glance</h2>
+            <p class="section-note">Simulated results. Select a district in the table or on the map to see precinct returns.</p>
+            <div class="county-table-wrap">
+                <table id="overview-table"><thead><tr><th>District</th><th>Leader</th><th>Vote share</th><th>Lead</th><th>Reporting</th></tr></thead>
+                <tbody></tbody></table>
+            </div>
+        </section>
+
+        <section class="panel" id="county-panel">
+            <h2>County Results</h2>
+
+            <div class="county-table-wrap">
+                <table id="county-results">
+                    <thead><tr><th>County</th><th>Reporting</th></tr></thead>
+                    <tbody><tr><td colspan="2">Loading...</td></tr></tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <aside class="tools-panel">
+
+        <div class="tools-header">
+            <h2>Reporting Tools</h2>
+            <p>Generate election updates and comparisons.</p>
+        </div>
+
+        <section class="tool-section" id="historical-comparison">
+            <h3>Historical Comparison</h3>
+            <p class="section-note" id="history-context">Loading historical election...</p>
+            <div id="history-results"></div>
+            <p class="tool-note" id="history-note"></p>
+        </section>
+
+        <section class="tool-section" id="generator-section">
+            <h3>Content Generator</h3>
+            <p class="section-note">Simulated current results and real historical comparison</p>
+            <div class="generated-copy" id="generated-copy" aria-live="polite">
+                Loading election summary...
+            </div>
+            <button class="copy-summary" type="button" id="copy-generated" disabled>Copy summary</button>
+            <p class="tool-note">Vote shares use all listed candidates in each race. Simulated returns must not be published as real results.</p>
+        </section>
+
+        <section class="tool-section" id="publishing-tools">
+            <h3>Map Embed Generator</h3>
+            <p class="section-note">Embed the currently selected map and geography in another webpage.</p>
+            <div class="embed-tool-form">
+                <label for="embed-height">Iframe height (pixels)</label>
+                <input type="number" min="400" max="1200" step="20" value="680" id="embed-height">
+                <label for="embed-code">Iframe HTML</label>
+                <textarea id="embed-code" rows="5" readonly aria-label="Copyable iframe HTML"></textarea>
+                <div class="embed-tool-actions">
+                    <button class="copy-summary" type="button" id="copy-embed">Copy iframe code</button>
+                    <a href="#" id="embed-preview" target="_blank" rel="noopener noreferrer">Preview map-only version</a>
+                </div>
+                <p class="tool-note" id="embed-publishing-note"></p>
+            </div>
+        </section>
+
+    </aside>
+
+</div>
+
+<footer class="site-footer">
+    Beacon Election Dashboard Prototype | FICTIONAL 2026 results for testing | Real 2022 and 2024 historical data
+</footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="assets/js/pa01_briefing.js"></script>
+    <script src="assets/js/governor_briefing.js"></script>
+    <script src="assets/js/senate16_briefing.js"></script>
+    <script src="assets/js/senate6_10_briefing.js"></script>
+    <script src="assets/js/house_briefing.js"></script>
+    <script src="assets/js/embed_tools.js"></script>
+    <script src="assets/js/map.js"></script>
+</body>
+</html>

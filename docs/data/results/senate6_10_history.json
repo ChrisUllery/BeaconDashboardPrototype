@@ -1,0 +1,111 @@
+{
+  "source": "Pennsylvania Department of State official general-election precinct returns",
+  "note": "2022 Senate is the full historical district. 2024 presidential results include only election units assigned to each Senate district in 2024, not Bucks County as a whole. Percentages exclude write-ins and include all named candidates; 2026 data are simulated.",
+  "districts": {
+    "6": {
+      "district": 6,
+      "county_code": 9,
+      "county_name": "Bucks",
+      "elections": [
+        {
+          "election_year": 2022,
+          "office": "State Senate",
+          "candidates": [
+            {
+              "name": "Frank Farry",
+              "party": "REP",
+              "votes": 67395
+            },
+            {
+              "name": "Ann Marie Mitchell",
+              "party": "DEM",
+              "votes": 57218
+            },
+            {
+              "name": "Brandon Bentrim",
+              "party": "LIB",
+              "votes": 1961
+            }
+          ]
+        },
+        {
+          "election_year": 2024,
+          "office": "President",
+          "candidates": [
+            {
+              "name": "Donald Trump",
+              "party": "REP",
+              "votes": 85573
+            },
+            {
+              "name": "Kamala Harris",
+              "party": "DEM",
+              "votes": 76585
+            },
+            {
+              "name": "Jill Stein",
+              "party": "GRN",
+              "votes": 796
+            },
+            {
+              "name": "Chase Oliver",
+              "party": "LIB",
+              "votes": 725
+            }
+          ],
+          "election_units": 125
+        }
+      ]
+    },
+    "10": {
+      "district": 10,
+      "county_code": 9,
+      "county_name": "Bucks",
+      "elections": [
+        {
+          "election_year": 2022,
+          "office": "State Senate",
+          "candidates": [
+            {
+              "name": "Steven Santarsiero",
+              "party": "DEM",
+              "votes": 77773
+            },
+            {
+              "name": "Matthew Mccullough",
+              "party": "REP",
+              "votes": 54988
+            }
+          ]
+        },
+        {
+          "election_year": 2024,
+          "office": "President",
+          "candidates": [
+            {
+              "name": "Kamala Harris",
+              "party": "DEM",
+              "votes": 92306
+            },
+            {
+              "name": "Donald Trump",
+              "party": "REP",
+              "votes": 75155
+            },
+            {
+              "name": "Jill Stein",
+              "party": "GRN",
+              "votes": 859
+            },
+            {
+              "name": "Chase Oliver",
+              "party": "LIB",
+              "votes": 768
+            }
+          ],
+          "election_units": 132
+        }
+      ]
+    }
+  }
+}

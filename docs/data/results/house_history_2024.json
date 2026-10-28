@@ -1,0 +1,511 @@
+{
+  "source": "Pennsylvania Department of State 2024 general-election precinct returns",
+  "note": "All House districts are Bucks County only. Presidential totals are for 2024 election units assigned to each House district, not the whole county. Percentages use named candidate votes and exclude write-ins. The 2026 vote totals are simulated.",
+  "districts": {
+    "18": {
+      "district": 18,
+      "county_code": 9,
+      "county_name": "Bucks",
+      "elections": [
+        {
+          "election_year": 2024,
+          "office": "State House",
+          "candidates": [
+            {
+              "name": "Kathleen Tomlinson",
+              "party": "REP",
+              "votes": 18160
+            },
+            {
+              "name": "Anand Patel",
+              "party": "DEM",
+              "votes": 14468
+            }
+          ]
+        },
+        {
+          "election_year": 2024,
+          "office": "President",
+          "candidates": [
+            {
+              "name": "Donald Trump",
+              "party": "REP",
+              "votes": 16988
+            },
+            {
+              "name": "Kamala Harris",
+              "party": "DEM",
+              "votes": 15896
+            },
+            {
+              "name": "Jill Stein",
+              "party": "GRN",
+              "votes": 275
+            },
+            {
+              "name": "Chase Oliver",
+              "party": "LIB",
+              "votes": 139
+            }
+          ],
+          "election_units": 28
+        }
+      ]
+    },
+    "29": {
+      "district": 29,
+      "county_code": 9,
+      "county_name": "Bucks",
+      "elections": [
+        {
+          "election_year": 2024,
+          "office": "State House",
+          "candidates": [
+            {
+              "name": "Timothy Brennan",
+              "party": "DEM",
+              "votes": 25176
+            },
+            {
+              "name": "Steven Mekanik",
+              "party": "REP",
+              "votes": 19118
+            },
+            {
+              "name": "Rob Ronky",
+              "party": "LIB",
+              "votes": 963
+            }
+          ]
+        },
+        {
+          "election_year": 2024,
+          "office": "President",
+          "candidates": [
+            {
+              "name": "Kamala Harris",
+              "party": "DEM",
+              "votes": 26200
+            },
+            {
+              "name": "Donald Trump",
+              "party": "REP",
+              "votes": 19311
+            },
+            {
+              "name": "Chase Oliver",
+              "party": "LIB",
+              "votes": 216
+            },
+            {
+              "name": "Jill Stein",
+              "party": "GRN",
+              "votes": 190
+            }
+          ],
+          "election_units": 29
+        }
+      ]
+    },
+    "31": {
+      "district": 31,
+      "county_code": 9,
+      "county_name": "Bucks",
+      "elections": [
+        {
+          "election_year": 2024,
+          "office": "State House",
+          "candidates": [
+            {
+              "name": "Perry Warren",
+              "party": "DEM",
+              "votes": 27837
+            },
+            {
+              "name": "Bernard Sauer",
+              "party": "REP",
+              "votes": 19477
+            }
+          ]
+        },
+        {
+          "election_year": 2024,
+          "office": "President",
+          "candidates": [
+            {
+              "name": "Kamala Harris",
+              "party": "DEM",
+              "votes": 27487
+            },
+            {
+              "name": "Donald Trump",
+              "party": "REP",
+              "votes": 20157
+            },
+            {
+              "name": "Jill Stein",
+              "party": "GRN",
+              "votes": 242
+            },
+            {
+              "name": "Chase Oliver",
+              "party": "LIB",
+              "votes": 196
+            }
+          ],
+          "election_units": 30
+        }
+      ]
+    },
+    "140": {
+      "district": 140,
+      "county_code": 9,
+      "county_name": "Bucks",
+      "elections": [
+        {
+          "election_year": 2024,
+          "office": "State House",
+          "candidates": [
+            {
+              "name": "James Prokopiak",
+              "party": "DEM",
+              "votes": 17587
+            },
+            {
+              "name": "Candace Cabanas",
+              "party": "REP",
+              "votes": 14959
+            }
+          ]
+        },
+        {
+          "election_year": 2024,
+          "office": "President",
+          "candidates": [
+            {
+              "name": "Kamala Harris",
+              "party": "DEM",
+              "votes": 17099
+            },
+            {
+              "name": "Donald Trump",
+              "party": "REP",
+              "votes": 15955
+            },
+            {
+              "name": "Jill Stein",
+              "party": "GRN",
+              "votes": 188
+            },
+            {
+              "name": "Chase Oliver",
+              "party": "LIB",
+              "votes": 158
+            }
+          ],
+          "election_units": 33
+        }
+      ]
+    },
+    "141": {
+      "district": 141,
+      "county_code": 9,
+      "county_name": "Bucks",
+      "elections": [
+        {
+          "election_year": 2024,
+          "office": "State House",
+          "candidates": [
+            {
+              "name": "Tina Davis",
+              "party": "DEM",
+              "votes": 20960
+            },
+            {
+              "name": "Noah Boyd",
+              "party": "REP",
+              "votes": 11345
+            }
+          ]
+        },
+        {
+          "election_year": 2024,
+          "office": "President",
+          "candidates": [
+            {
+              "name": "Kamala Harris",
+              "party": "DEM",
+              "votes": 16884
+            },
+            {
+              "name": "Donald Trump",
+              "party": "REP",
+              "votes": 15785
+            },
+            {
+              "name": "Jill Stein",
+              "party": "GRN",
+              "votes": 178
+            },
+            {
+              "name": "Chase Oliver",
+              "party": "LIB",
+              "votes": 146
+            }
+          ],
+          "election_units": 39
+        }
+      ]
+    },
+    "142": {
+      "district": 142,
+      "county_code": 9,
+      "county_name": "Bucks",
+      "elections": [
+        {
+          "election_year": 2024,
+          "office": "State House",
+          "candidates": [
+            {
+              "name": "Joseph Hogan",
+              "party": "REP",
+              "votes": 21226
+            },
+            {
+              "name": "Anna Payne",
+              "party": "DEM",
+              "votes": 17493
+            }
+          ]
+        },
+        {
+          "election_year": 2024,
+          "office": "President",
+          "candidates": [
+            {
+              "name": "Donald Trump",
+              "party": "REP",
+              "votes": 20170
+            },
+            {
+              "name": "Kamala Harris",
+              "party": "DEM",
+              "votes": 18850
+            },
+            {
+              "name": "Chase Oliver",
+              "party": "LIB",
+              "votes": 179
+            },
+            {
+              "name": "Jill Stein",
+              "party": "GRN",
+              "votes": 179
+            }
+          ],
+          "election_units": 30
+        }
+      ]
+    },
+    "143": {
+      "district": 143,
+      "county_code": 9,
+      "county_name": "Bucks",
+      "elections": [
+        {
+          "election_year": 2024,
+          "office": "State House",
+          "candidates": [
+            {
+              "name": "Shelby Labs",
+              "party": "REP",
+              "votes": 24370
+            },
+            {
+              "name": "Eleanor Breslin",
+              "party": "DEM",
+              "votes": 18866
+            }
+          ]
+        },
+        {
+          "election_year": 2024,
+          "office": "President",
+          "candidates": [
+            {
+              "name": "Donald Trump",
+              "party": "REP",
+              "votes": 22827
+            },
+            {
+              "name": "Kamala Harris",
+              "party": "DEM",
+              "votes": 20409
+            },
+            {
+              "name": "Chase Oliver",
+              "party": "LIB",
+              "votes": 266
+            },
+            {
+              "name": "Jill Stein",
+              "party": "GRN",
+              "votes": 208
+            }
+          ],
+          "election_units": 29
+        }
+      ]
+    },
+    "144": {
+      "district": 144,
+      "county_code": 9,
+      "county_name": "Bucks",
+      "elections": [
+        {
+          "election_year": 2024,
+          "office": "State House",
+          "candidates": [
+            {
+              "name": "Brian Munroe",
+              "party": "DEM",
+              "votes": 20553
+            },
+            {
+              "name": "Daniel Mcphillips",
+              "party": "REP",
+              "votes": 19488
+            }
+          ]
+        },
+        {
+          "election_year": 2024,
+          "office": "President",
+          "candidates": [
+            {
+              "name": "Donald Trump",
+              "party": "REP",
+              "votes": 20221
+            },
+            {
+              "name": "Kamala Harris",
+              "party": "DEM",
+              "votes": 20088
+            },
+            {
+              "name": "Chase Oliver",
+              "party": "LIB",
+              "votes": 178
+            },
+            {
+              "name": "Jill Stein",
+              "party": "GRN",
+              "votes": 166
+            }
+          ],
+          "election_units": 28
+        }
+      ]
+    },
+    "145": {
+      "district": 145,
+      "county_code": 9,
+      "county_name": "Bucks",
+      "elections": [
+        {
+          "election_year": 2024,
+          "office": "State House",
+          "candidates": [
+            {
+              "name": "Craig Staats",
+              "party": "REP",
+              "votes": 22678
+            },
+            {
+              "name": "Vera Cole",
+              "party": "DEM",
+              "votes": 15821
+            }
+          ]
+        },
+        {
+          "election_year": 2024,
+          "office": "President",
+          "candidates": [
+            {
+              "name": "Donald Trump",
+              "party": "REP",
+              "votes": 22323
+            },
+            {
+              "name": "Kamala Harris",
+              "party": "DEM",
+              "votes": 16264
+            },
+            {
+              "name": "Chase Oliver",
+              "party": "LIB",
+              "votes": 225
+            },
+            {
+              "name": "Jill Stein",
+              "party": "GRN",
+              "votes": 185
+            }
+          ],
+          "election_units": 29
+        }
+      ]
+    },
+    "178": {
+      "district": 178,
+      "county_code": 9,
+      "county_name": "Bucks",
+      "elections": [
+        {
+          "election_year": 2024,
+          "office": "State House",
+          "candidates": [
+            {
+              "name": "Kristin Marcell",
+              "party": "REP",
+              "votes": 26864
+            },
+            {
+              "name": "Paul Lang",
+              "party": "DEM",
+              "votes": 16939
+            }
+          ]
+        },
+        {
+          "election_year": 2024,
+          "office": "President",
+          "candidates": [
+            {
+              "name": "Donald Trump",
+              "party": "REP",
+              "votes": 24985
+            },
+            {
+              "name": "Kamala Harris",
+              "party": "DEM",
+              "votes": 19254
+            },
+            {
+              "name": "Chase Oliver",
+              "party": "LIB",
+              "votes": 201
+            },
+            {
+              "name": "Jill Stein",
+              "party": "GRN",
+              "votes": 160
+            }
+          ],
+          "election_units": 31
+        }
+      ]
+    }
+  }
+}

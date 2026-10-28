@@ -1,0 +1,307 @@
+{
+  "election": "2026-11-03 Pennsylvania general election",
+  "purpose": "Mock dashboard roster, not election results",
+  "coverage": "Bucks, Montgomery, and Lehigh county precinct maps; statewide race geography is incomplete",
+  "sources": [
+    "https://buckscounty.gov/1380/Sample-Ballots",
+    "https://pennsylvaniafiles.org/2026/races",
+    "2026 Bucks County May 19 primary precinct PDF"
+  ],
+  "source_checked_date": "2026-10-27",
+  "disclaimer": "Candidate names are roster metadata; do not interpret primary votes as general-election votes. Independent and third-party candidates are included where identified. Verify against final official ballots before publishing.",
+  "races": [
+    {
+      "race_id": "governor",
+      "office": "GOV",
+      "district": null,
+      "counties_on_dashboard": [
+        9,
+        39,
+        46
+      ],
+      "historical_reference_year": 2022,
+      "candidates": [
+        {
+          "name": "Josh Shapiro",
+          "party": "DEM"
+        },
+        {
+          "name": "Stacy Garrity",
+          "party": "REP"
+        },
+        {
+          "name": "Ken Krawchuk",
+          "party": "LIB"
+        }
+      ]
+    },
+    {
+      "race_id": "pa01",
+      "office": "USC",
+      "district": 1,
+      "counties_on_dashboard": [
+        9,
+        46
+      ],
+      "historical_reference_year": 2024,
+      "candidates": [
+        {
+          "name": "Bob Harvie",
+          "party": "DEM"
+        },
+        {
+          "name": "Brian Fitzpatrick",
+          "party": "REP"
+        }
+      ]
+    },
+    {
+      "race_id": "senate_6",
+      "office": "STS",
+      "district": 6,
+      "counties_on_dashboard": [
+        9
+      ],
+      "historical_reference_year": 2022,
+      "candidates": [
+        {
+          "name": "Eileen Hartnett Albillar",
+          "party": "DEM"
+        },
+        {
+          "name": "Frank Farry",
+          "party": "REP"
+        }
+      ]
+    },
+    {
+      "race_id": "senate_10",
+      "office": "STS",
+      "district": 10,
+      "counties_on_dashboard": [
+        9
+      ],
+      "historical_reference_year": 2022,
+      "candidates": [
+        {
+          "name": "Steve Santarsiero",
+          "party": "DEM"
+        },
+        {
+          "name": "Greg Bankos",
+          "party": "REP"
+        }
+      ]
+    },
+    {
+      "race_id": "senate_16",
+      "office": "STS",
+      "district": 16,
+      "counties_on_dashboard": [
+        9,
+        39
+      ],
+      "historical_reference_year": 2022,
+      "candidates": [
+        {
+          "name": "Mark Pinsley",
+          "party": "DEM"
+        },
+        {
+          "name": "Jarrett Coleman",
+          "party": "REP"
+        }
+      ]
+    },
+    {
+      "race_id": "house_18",
+      "office": "STH",
+      "district": 18,
+      "counties_on_dashboard": [
+        9
+      ],
+      "historical_reference_year": 2024,
+      "candidates": [
+        {
+          "name": "Bryan Allen",
+          "party": "DEM"
+        },
+        {
+          "name": "K.C. Tomlinson",
+          "party": "REP"
+        }
+      ]
+    },
+    {
+      "race_id": "house_29",
+      "office": "STH",
+      "district": 29,
+      "counties_on_dashboard": [
+        9
+      ],
+      "historical_reference_year": 2024,
+      "candidates": [
+        {
+          "name": "Tim Brennan",
+          "party": "DEM"
+        },
+        {
+          "name": "Sean Duffy",
+          "party": "REP"
+        }
+      ]
+    },
+    {
+      "race_id": "house_31",
+      "office": "STH",
+      "district": 31,
+      "counties_on_dashboard": [
+        9
+      ],
+      "historical_reference_year": 2024,
+      "candidates": [
+        {
+          "name": "Perry Warren",
+          "party": "DEM"
+        }
+      ]
+    },
+    {
+      "race_id": "house_140",
+      "office": "STH",
+      "district": 140,
+      "counties_on_dashboard": [
+        9
+      ],
+      "historical_reference_year": 2024,
+      "candidates": [
+        {
+          "name": "Jim Prokopiak",
+          "party": "DEM"
+        },
+        {
+          "name": "Michael J. Gettis",
+          "party": "REP"
+        }
+      ]
+    },
+    {
+      "race_id": "house_141",
+      "office": "STH",
+      "district": 141,
+      "counties_on_dashboard": [
+        9
+      ],
+      "historical_reference_year": 2024,
+      "candidates": [
+        {
+          "name": "Tina Davis",
+          "party": "DEM"
+        },
+        {
+          "name": "Ken Velez",
+          "party": "REP"
+        }
+      ]
+    },
+    {
+      "race_id": "house_142",
+      "office": "STH",
+      "district": 142,
+      "counties_on_dashboard": [
+        9
+      ],
+      "historical_reference_year": 2024,
+      "candidates": [
+        {
+          "name": "Kristin Egan",
+          "party": "DEM"
+        },
+        {
+          "name": "Joe Hogan",
+          "party": "REP"
+        }
+      ]
+    },
+    {
+      "race_id": "house_143",
+      "office": "STH",
+      "district": 143,
+      "counties_on_dashboard": [
+        9
+      ],
+      "historical_reference_year": 2024,
+      "candidates": [
+        {
+          "name": "Tim Hayes",
+          "party": "DEM"
+        },
+        {
+          "name": "Shelby Labs",
+          "party": "REP"
+        },
+        {
+          "name": "Chris Gambino",
+          "party": "FWD"
+        }
+      ]
+    },
+    {
+      "race_id": "house_144",
+      "office": "STH",
+      "district": 144,
+      "counties_on_dashboard": [
+        9
+      ],
+      "historical_reference_year": 2024,
+      "candidates": [
+        {
+          "name": "Brian Munroe",
+          "party": "DEM"
+        },
+        {
+          "name": "Mike Murphy",
+          "party": "REP"
+        }
+      ]
+    },
+    {
+      "race_id": "house_145",
+      "office": "STH",
+      "district": 145,
+      "counties_on_dashboard": [
+        9
+      ],
+      "historical_reference_year": 2024,
+      "candidates": [
+        {
+          "name": "Craig Staats",
+          "party": "REP"
+        },
+        {
+          "name": "Rebecca Prendergast",
+          "party": "IND"
+        }
+      ]
+    },
+    {
+      "race_id": "house_178",
+      "office": "STH",
+      "district": 178,
+      "counties_on_dashboard": [
+        9
+      ],
+      "historical_reference_year": 2024,
+      "candidates": [
+        {
+          "name": "Monica Weninger",
+          "party": "DEM"
+        },
+        {
+          "name": "Kristin Marcell",
+          "party": "REP"
+        }
+      ]
+    }
+  ]
+}

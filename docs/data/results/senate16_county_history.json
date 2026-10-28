@@ -1,0 +1,139 @@
+{
+  "source": "Official Pennsylvania Department of State precinct general-election returns",
+  "note": "2022 Senate results use the district as recorded in 2022. Presidential results include only election units assigned to Senate District 16 in the 2024 returns; they are NOT full-county presidential totals. Percentages exclude write-ins.",
+  "district": 16,
+  "elections": [
+    {
+      "election_year": 2022,
+      "office": "State Senate",
+      "district": 16,
+      "candidates": [
+        {
+          "name": "Jarrett Coleman",
+          "party": "REP",
+          "votes": 68344
+        },
+        {
+          "name": "Mark Pinsley",
+          "party": "DEM",
+          "votes": 57845
+        }
+      ],
+      "county_totals": [
+        {
+          "county_code": 9,
+          "county_name": "Bucks",
+          "candidates": [
+            {
+              "name": "Jarrett Coleman",
+              "party": "REP",
+              "votes": 29555
+            },
+            {
+              "name": "Mark Pinsley",
+              "party": "DEM",
+              "votes": 23391
+            }
+          ]
+        },
+        {
+          "county_code": 39,
+          "county_name": "Lehigh",
+          "candidates": [
+            {
+              "name": "Jarrett Coleman",
+              "party": "REP",
+              "votes": 38789
+            },
+            {
+              "name": "Mark Pinsley",
+              "party": "DEM",
+              "votes": 34454
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "election_year": 2024,
+      "office": "President",
+      "district": 16,
+      "candidates": [
+        {
+          "name": "Donald Trump",
+          "party": "REP",
+          "votes": 88822
+        },
+        {
+          "name": "Kamala Harris",
+          "party": "DEM",
+          "votes": 74073
+        },
+        {
+          "name": "Jill Stein",
+          "party": "GRN",
+          "votes": 1130
+        },
+        {
+          "name": "Chase Oliver",
+          "party": "LIB",
+          "votes": 872
+        }
+      ],
+      "county_totals": [
+        {
+          "county_code": 9,
+          "county_name": "Bucks",
+          "candidates": [
+            {
+              "name": "Donald Trump",
+              "party": "REP",
+              "votes": 37994
+            },
+            {
+              "name": "Kamala Harris",
+              "party": "DEM",
+              "votes": 29540
+            },
+            {
+              "name": "Chase Oliver",
+              "party": "LIB",
+              "votes": 411
+            },
+            {
+              "name": "Jill Stein",
+              "party": "GRN",
+              "votes": 316
+            }
+          ]
+        },
+        {
+          "county_code": 39,
+          "county_name": "Lehigh",
+          "candidates": [
+            {
+              "name": "Donald Trump",
+              "party": "REP",
+              "votes": 50828
+            },
+            {
+              "name": "Kamala Harris",
+              "party": "DEM",
+              "votes": 44533
+            },
+            {
+              "name": "Jill Stein",
+              "party": "GRN",
+              "votes": 814
+            },
+            {
+              "name": "Chase Oliver",
+              "party": "LIB",
+              "votes": 461
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

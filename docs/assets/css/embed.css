@@ -1,0 +1,78 @@
+/* The normal dashboard is unchanged. Only URLs with ?embed=1 use this layout. */
+.embed-tool-form { display: grid; gap: 9px; }
+.embed-tool-form label { font-size: 13px; font-weight: 700; color: #243747; }
+.embed-tool-form input,
+.embed-tool-form textarea {
+    width: 100%;
+    padding: 9px;
+    border: 1px solid #afbdc8;
+    border-radius: 5px;
+    font: inherit;
+    background: #fff;
+    color: #1f2c38;
+}
+.embed-tool-form textarea { font-family: Consolas, monospace; font-size: 12px; resize: vertical; }
+.embed-tool-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.embed-tool-actions a { color: #176b75; font-weight: 700; }
+#embed-publishing-note { line-height: 1.5; }
+
+body.beacon-embed { background: #fff; min-width: 0; }
+body.beacon-embed .site-header { padding: 8px 14px; gap: 8px; }
+body.beacon-embed .site-header p { display: none; }
+body.beacon-embed .brand { font-size: 15px; }
+body.beacon-embed .brand span { font-size: 12px; margin-left: 5px; }
+body.beacon-embed .demo-badge { font-size: 10px; padding: 3px 7px; white-space: nowrap; }
+body.beacon-embed .dashboard {
+    display: flex;
+    flex-direction: column;
+    max-width: none;
+    min-height: 0;
+    margin: 0;
+}
+body.beacon-embed .sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: start;
+    padding: 10px 14px;
+    border-right: 0;
+    border-bottom: 1px solid #dce2e8;
+}
+body.beacon-embed .sidebar > h2,
+body.beacon-embed .sidebar > .section-note,
+body.beacon-embed .sidebar-footer,
+body.beacon-embed #geography-hint { display: none; }
+body.beacon-embed .sidebar .nav-field { flex: 1 1 190px; margin: 0; min-width: 0; }
+body.beacon-embed .sidebar .nav-field label { display: block; font-weight: 700; font-size: 11px; margin-bottom: 3px; }
+body.beacon-embed .sidebar select { width: 100%; min-width: 0; }
+body.beacon-embed .tools-panel,
+body.beacon-embed .results-panel > .section-heading,
+body.beacon-embed .results-panel > .status-strip,
+body.beacon-embed .results-panel > .candidate-grid,
+body.beacon-embed .results-panel > .results-bar,
+body.beacon-embed #overview-results,
+body.beacon-embed #county-panel { display: none !important; }
+body.beacon-embed .results-panel { padding: 6px 10px 0; width: 100%; min-width: 0; }
+body.beacon-embed .map-panel { padding: 8px; margin: 0; border: 0; }
+body.beacon-embed .map-panel .panel-heading { margin-bottom: 5px; gap: 5px; }
+body.beacon-embed .map-panel .panel-heading h2 { font-size: 13px; margin: 0; }
+body.beacon-embed .map-panel .small-tag { font-size: 10px; }
+body.beacon-embed .precinct-map {
+    width: 100%;
+    max-width: none;
+    height: max(320px, calc(100vh - 250px));
+    min-height: 320px;
+    border-radius: 3px;
+}
+body.beacon-embed .map-panel .margin-legend { margin: 7px auto; padding: 7px 10px; }
+body.beacon-embed .map-status { margin: 4px 0 0; line-height: 1.3; }
+body.beacon-embed .site-footer { font-size: 10px; padding: 5px; }
+@media (max-width: 510px) {
+    body.beacon-embed .brand span { display: none; }
+    body.beacon-embed .site-header { padding: 7px; }
+    body.beacon-embed .sidebar { padding: 7px; gap: 6px; }
+    body.beacon-embed .sidebar .nav-field { flex-basis: 140px; }
+    body.beacon-embed .results-panel { padding: 4px; }
+    body.beacon-embed .map-panel { padding: 4px; }
+    body.beacon-embed .precinct-map { height: max(320px, calc(100vh - 265px)); }
+}
