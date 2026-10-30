@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Election results map | The Beacon</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="../assets/css/standalone-map.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+  <script src="../assets/js/standalone-map.js" defer></script>
+</head>
+<body>
+  <main class="map-shell" aria-label="Interactive election results map">
+    <section id="map-controls" class="map-controls" aria-label="Choose election map" hidden>
+      <label for="map-race-select">Race
+        <select id="map-race-select" aria-label="Select election race"></select>
+      </label>
+      <label for="map-view-select">Map geography
+        <select id="map-view-select" aria-label="Select map geography"></select>
+      </label>
+    </section>
+    <div class="map-stage">
+    <div id="election-map" class="election-map" aria-label="Map of the selected election race"></div>
+    <span class="simulated-label">SIMULATED 2026 RESULTS</span>
+    <button id="return-to-overview" class="return-button" type="button" hidden>Back to overview</button>
+    <div class="legend" id="map-legend" aria-label="Election map color legend" hidden></div>
+    <div class="load-status" id="map-status" role="status">Loading election map...</div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Election Results by Race | The Beacon</title>
+    <link rel="stylesheet" href="../assets/css/results-cards.css">
+    <script src="../assets/js/results-cards.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <div class="brand">THE BEACON <span>Election Desk</span></div>
+            <a class="dashboard-link" href="../index.html">View interactive dashboard</a>
+        </div>
+    </header>
+
+    <main class="page-shell">
+        <div class="page-heading">
+            <p class="eyebrow">2026 GENERAL ELECTION</p>
+            <h1>Election results by race</h1>
+            <p class="page-description">Copyable race introductions, candidate results and precinct reporting for the 15 races tracked by The Beacon.</p>
+        </div>
+
+        <div class="simulation-notice" role="note">
+            <strong>SIMULATED ELECTION RESULTS</strong>
+            <span>These are fictional 2026 returns for testing, not actual election results. The governor card shows Bucks County only.</span>
+        </div>
+
+        <!-- Editor instructions and one-paste WordPress HTML. Never shown in the standalone card embeds. -->
+        <section id="how-to-use" class="how-to-use" aria-labelledby="how-to-use-title">
+            <p class="eyebrow">FOR THE BEACON EDITORS</p>
+            <h2 id="how-to-use-title">How to use</h2>
+            <ol class="how-to-use__steps">
+                <li>Choose <strong>Before polls close</strong> or <strong>After polls close</strong> under Article introduction. Click <strong>Copy introduction</strong> and paste those paragraphs at the top of your WordPress story.</li>
+                <li>For each race you want to highlight, click <strong>Copy heading and introduction</strong>. Paste that text into the story.</li>
+                <li>Click <strong>Copy iframe code</strong> for the same race. Add a <strong>Custom HTML</strong> block in WordPress directly below the race's introduction, then paste the iframe code.</li>
+                <li>Repeat the heading, introduction and embed steps for the remaining races you want to include.</li>
+            </ol>
+            <div class="how-to-use__master">
+                <div>
+                    <h3>Or build the full article in one paste</h3>
+                    <p>Copy the selected article introduction, all 15 race headings and introductions, and all 15 card embeds as one HTML snippet. Paste it into <strong>one Custom HTML block</strong> in WordPress, not a regular paragraph block. You can remove any races you do not want afterward.</p>
+                    <p class="how-to-use__note">Before publishing, verify the copy and confirm that real election returns have replaced the simulated data. Preview the WordPress post to make sure its iframe embeds are permitted and displayed correctly.</p>
+                </div>
+                <div class="how-to-use__master-actions">
+                    <button id="copy-complete-article" class="how-to-use__copy" type="button" disabled>Copy full article HTML (15 races)</button>
+                    <span id="complete-article-feedback" class="how-to-use__feedback" role="status" aria-live="polite">Available when all races finish loading.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Editor-only article introduction. This does not appear in individual result-card embeds. -->
+        <section id="article-opening" class="article-opening" aria-labelledby="article-opening-title">
+            <p class="eyebrow">COPY FOR THE ELECTION-NIGHT ARTICLE</p>
+            <h2 id="article-opening-title">Article introduction</h2>
+            <p class="article-opening__hint">Choose when the copy will be published, then copy the three paragraphs into WordPress. Verify details before publication.</p>
+            <div class="article-opening__modes" role="group" aria-label="Election-night publication time">
+                <button type="button" class="article-opening__mode is-selected" data-opening-mode="before" aria-pressed="true">Before polls close</button>
+                <button type="button" class="article-opening__mode" data-opening-mode="after" aria-pressed="false">After polls close</button>
+            </div>
+            <div id="article-opening-preview" class="article-opening__preview" aria-label="Article introduction preview"></div>
+            <div class="article-opening__actions">
+                <button id="copy-article-opening" class="article-opening__copy" type="button">Copy introduction</button>
+                <span id="article-opening-feedback" class="article-opening__feedback" role="status" aria-live="polite"></span>
+            </div>
+        </section>
+
+        <p id="page-status" class="page-status" role="status" aria-live="polite">Loading race cards...</p>
+        <div id="race-sections" class="race-sections" aria-label="Election race results"></div>
+    </main>
+
+    <footer class="site-footer">
+        <span>The Beacon | 2026 election results prototype</span>
+        <span>Data: simulated 2026 returns and historical Pennsylvania election results. Editorial introductions are not part of the embeds.</span>
+    </footer>
+</body>
+</html>

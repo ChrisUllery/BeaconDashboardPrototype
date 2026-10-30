@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Race Map Embeds | The Beacon</title>
+    <link rel="stylesheet" href="../assets/css/map-embeds.css">
+    <script src="../assets/js/map-embeds.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <div class="brand">THE BEACON <span>Election Desk</span></div>
+            <nav class="site-nav" aria-label="Election tools">
+                <a href="../results-cards/">Results cards</a>
+                <a href="../index.html">Interactive dashboard</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-shell">
+        <div class="page-heading">
+            <p class="eyebrow">2026 GENERAL ELECTION</p>
+            <h1>Election race map embeds</h1>
+            <p class="page-description">One interactive all-races map, plus individual map embeds for each of the 15 races tracked by The Beacon.</p>
+        </div>
+
+        <div class="simulation-notice" role="note">
+            <strong>SIMULATED ELECTION RESULTS</strong>
+            <span>These are fictional 2026 election returns for testing, not actual election results. The maps are standalone interactive embeds, separate from the reporting dashboard.</span>
+        </div>
+
+        <section class="how-to-use" aria-labelledby="how-to-title">
+            <p class="eyebrow">FOR THE BEACON EDITORS</p>
+            <h2 id="how-to-title">How to use</h2>
+            <ol>
+                <li>For an interactive map with a race selector, use <strong>Copy all-races iframe</strong> in the first section. Readers can choose any of the 15 races, including on mobile.</li>
+                <li>To feature one specific race, find it below. Choose <strong>Precinct results</strong>, <strong>County results</strong> (where available) or <strong>District overview</strong>.</li>
+                <li>Click <strong>Preview map</strong> to check how the interactive map looks. Only one map preview is loaded at a time.</li>
+                <li>Click <strong>Copy iframe code</strong>. In WordPress, add a <strong>Custom HTML</strong> block where the map should appear and paste the code.</li>
+                <li>Repeat for any other races you want to feature. Preview the WordPress post to confirm the iframes display correctly.</li>
+            </ol>
+            <p class="how-to-use__note">Iframe code points to the published GitHub Pages map viewer; local previews use your PyCharm server. Publish the map viewer and data before placing these embeds in a live article. Some WordPress roles or configurations restrict iframe HTML.</p>
+        </section>
+
+        <section class="master-embed" id="master-map-embed" aria-labelledby="master-map-heading">
+            <p class="eyebrow">FEATURED MAP</p>
+            <h2 id="master-map-heading">Interactive map: All 15 races</h2>
+            <p class="master-embed__description">One responsive map with race and geography selectors built in. Visitors can switch among all tracked contests without leaving the article. Governor results cover Bucks County only.</p>
+            <div class="race-entry__buttons">
+                <button class="action-button action-button--primary" id="master-copy" type="button">Copy all-races iframe</button>
+                <button class="action-button" id="master-preview-button" type="button" aria-expanded="false">Preview interactive map</button>
+                <a class="race-entry__open" id="master-open" href="#" target="_blank" rel="noopener noreferrer">Open standalone map</a>
+            </div>
+            <label class="race-entry__code-label" for="master-code">Iframe HTML</label>
+            <textarea class="race-entry__code" id="master-code" rows="3" readonly spellcheck="false" aria-label="Iframe HTML for all-races map"></textarea>
+            <p class="master-embed__help">Paste into a WordPress Custom HTML block. The embed stretches to the article width, and its selectors stack on mobile screens.</p>
+            <span id="master-feedback" class="race-entry__feedback" role="status" aria-live="polite"></span>
+            <div id="master-preview" class="race-entry__preview" hidden></div>
+        </section>
+
+        <p class="page-status" id="page-status" role="status" aria-live="polite">Loading race maps...</p>
+        <div id="map-race-sections" class="race-sections" aria-label="Individual race map embeds"></div>
+    </main>
+
+    <footer class="site-footer">
+        <span>The Beacon | 2026 election results prototype</span>
+        <span>Maps show simulated 2026 results. Each embed contains only the interactive map.</span>
+    </footer>
+</body>
+</html>

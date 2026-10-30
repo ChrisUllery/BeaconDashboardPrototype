@@ -4,6 +4,13 @@
 // Historical totals are real. All 2026 vote totals are SIMULATED, not live returns.
 document.addEventListener("DOMContentLoaded", async () => {
     const COUNTY = {9: "Bucks", 39: "Lehigh", 46: "Montgomery"};
+    // Update 20: map-only Bucks governor coverage.
+    const governorBucksEmbed = (() => {
+        const params = new URLSearchParams(window.location.search);
+        // Apply to governor selected inside ANY map-only iframe, even after
+        // readers change the race selector. The full dashboard is unchanged.
+        return params.get("embed") === "1";
+    })();
     const PARTY = {
         DEM: "Democrat", REP: "Republican", LIB: "Libertarian",
         IND: "Independent", FWD: "Forward", GRN: "Green"
@@ -317,7 +324,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     function drawBoundary(race, level, aggregate, label, countyCode = null) {
-        const geo = boundaryByKey.get(boundaryKey(race.race_id, level, countyCode));
+        // Bucks-only governor overview uses the Bucks boundary, not the three-county union.
+        const geoKey = governorBucksEmbed && race.office === "GOV" && level === "race"
+            ? boundaryKey(race.race_id, "county", 9)
+            : boundaryKey(race.race_id, level, countyCode);
+        const geo = boundaryByKey.get(geoKey);
         if (!geo) throw new Error(`Missing merged ${level} geometry for ${race.race_id}`);
         const totalVotes = countTotal(aggregate.votes);
         const ordered = race.candidate_roster.map(c => ({...c, votes: Number(aggregate.votes[c.party] || 0)}))
@@ -412,7 +423,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         const isGovernor = race.office === "GOV";
         const name = raceName(race);
         const coverage = isGovernor
-            ? `in the tracked counties of ${countyList(race)} (not statewide)`
+            ? (governorBucksEmbed ? "in Bucks County (not statewide)"
+                : `in the tracked counties of ${countyList(race)} (not statewide)`)
             : `in ${name}`;
 
         let current;
@@ -440,7 +452,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         } else {
             comparison = `A historical comparison for ${history.year} is not available.`;
         }
-        if (isGovernor) comparison += " The historical result is statewide; the current demonstration covers only three counties.";
+        if (isGovernor) comparison += governorBucksEmbed
+            ? " The historical result is statewide; these simulated 2026 results cover Bucks County only."
+            : " The historical result is statewide; the current demonstration covers only three counties.";
         if (!history.matching_2024_precinct_scope && !isGovernor) {
             comparison += " Historical and 2024 precinct district coverage differ, so precinct-level comparisons require verification.";
         }
@@ -451,7 +465,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         qs(".map-panel .panel-heading h2").textContent = currentView === "precinct"
             ? "Precinct Results Map"
             : currentView === "county" ? "County Results Map"
-            : race.office === "GOV" ? "Tracked Region Results Map" : "Entire District Results Map";
+            : race.office === "GOV" ? (governorBucksEmbed ? "Bucks County Results Map" : "Tracked Region Results Map") : "Entire District Results Map";
         qs(".candidate-grid").hidden = false;
         qs(".results-bar").hidden = false;
         qs("#county-panel").hidden = false;
@@ -470,7 +484,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         qs(".status-strip").innerHTML = `
             <span><strong>${formatNumber(reported)} of ${formatNumber(totalPrecincts)}</strong> mapped precincts reporting (${percent(reported, totalPrecincts)})</span>
             <span>${formatNumber(votes)} simulated votes</span>
-            ${race.office === "GOV" ? "<span>THREE COUNTIES ONLY, NOT STATEWIDE</span>" : ""}`;
+            ${race.office === "GOV" ? (governorBucksEmbed
+                ? "<span>BUCKS COUNTY ONLY, NOT STATEWIDE</span>"
+                : "<span>THREE COUNTIES ONLY, NOT STATEWIDE</span>") : ""}`;
 
         qs(".candidate-grid").innerHTML = summary.candidates.map(c => `
             <div class="candidate-card" style="border-top-color:${PARTY_COLOR[c.party] || "#888888"}">
@@ -506,7 +522,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             <small>${percent(c.votes, past.total)}</small></span>
             <strong>${formatNumber(c.votes)}</strong></div>`).join("");
         const warnings = [];
-        if (race.office === "GOV") warnings.push("The 2022 baseline is statewide; simulated 2026 votes cover Bucks, Lehigh and Montgomery only.");
+        if (race.office === "GOV") warnings.push(governorBucksEmbed
+            ? "The 2022 baseline is statewide; simulated 2026 votes cover Bucks County only."
+            : "The 2022 baseline is statewide; simulated 2026 votes cover Bucks, Lehigh and Montgomery only.");
         if (race.office !== "GOV" && !history.matching_2024_precinct_scope) warnings.push("The historical district's precinct coverage differs from the 2024 map. Precinct-to-precinct comparisons are not validated.");
         warnings.push("2026 precinct and district assignments still require independent confirmation.");
         qs("#history-note").textContent = warnings.join(" ");
@@ -563,7 +581,8 @@ document.addEventListener("DOMContentLoaded", async () => {
                     message.textContent = "Senate 16 detailed briefing unavailable; basic summary shown. Check the historical export and browser console.";
                     qs("#generated-copy").appendChild(message);
                 });
-        } else if (race.race_id === "governor") {
+        } else if (race.race_id === "governor" && !governorBucksEmbed) {
+            // The multi-county generator is not appropriate for Bucks-only embeds.
             window.BeaconGovernorBriefing.generate(race, history, layerByKey)
                 .then(briefing => {
                     if (currentRace !== race) return;
@@ -647,7 +666,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         field.disabled = false;
         const governor = currentRace.office === "GOV";
         const multipleCounties = currentRace.coverage_counties.length > 1;
-        const wholeName = governor ? "Tracked region overview" : "Entire district overview";
+        const wholeName = governor
+            ? (governorBucksEmbed ? "Bucks County overview" : "Tracked region overview")
+            : "Entire district overview";
         field.innerHTML = `<option value="race">${wholeName}</option>` +
             (multipleCounties ? '<option value="county">County results</option>' : '') +
             '<option value="precinct">Precinct results</option>';
@@ -657,11 +678,21 @@ document.addEventListener("DOMContentLoaded", async () => {
             : currentView === "county"
                 ? "Hover to highlight an entire county portion. Click for precincts."
                 : governor
-                    ? "Three-county tracked region, not Pennsylvania statewide."
+                    ? (governorBucksEmbed
+                        ? "Bucks County governor results only, not Pennsylvania statewide."
+                        : "Three-county tracked region, not Pennsylvania statewide.")
                     : "Hover to highlight the entire district. Click to drill down.";
     }
 
     function activateRace(race, history, mode = "race") {
+        if (governorBucksEmbed && race.office === "GOV") {
+            const bucksPrecincts = race.precincts.filter(p => Number(p.county_code) === 9);
+            if (!bucksPrecincts.length) throw new Error("Governor has no Bucks County precincts");
+            race = {...race, coverage_counties: [9], precincts: bucksPrecincts,
+                total_mapped_precincts: bucksPrecincts.length,
+                reporting_precincts: bucksPrecincts.filter(p => p.reported).length};
+            if (mode === "county") mode = "race";
+        }
         const upcoming = new Map(race.precincts.map(p => [`${p.county_code}:${p.map_id}`, p]));
         if (upcoming.size !== race.total_mapped_precincts) {
             throw new Error(`${race.race_id}: duplicate or missing precinct identifiers`);
@@ -685,7 +716,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         } else if (mode === "race") {
             const {aggregates} = createOverview(race, () => race.race_id);
             drawBoundary(race, "race", aggregates.get(race.race_id),
-                race.office === "GOV" ? "Governor: tracked three-county region" : raceName(race));
+                race.office === "GOV"
+                    ? (governorBucksEmbed ? "Governor: Bucks County" : "Governor: tracked three-county region")
+                    : raceName(race));
             fitVisibleLayers();
         } else {
             throw new Error(`Unsupported geography view: ${mode}`);

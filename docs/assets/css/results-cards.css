@@ -1,0 +1,391 @@
+/* Beacon typography: Google Fonts are loaded by the card stylesheet itself,
+   so the same fonts work on the gallery and inside future iframes. */
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Work+Sans:wght@400;500;600;700;800&display=swap");
+
+:root {
+    --background: #f3f5f7;
+    --surface: #ffffff;
+    --border: #dce2e8;
+    --text: #202c38;
+    --muted: #647386;
+    --accent: #176b75;
+    --font-heading: "Work Sans", Arial, Helvetica, sans-serif;
+    --font-body: "Libre Baskerville", Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font: 14px/1.5 var(--font-heading);
+}
+
+.site-header { background: #172b3b; color: #ffffff; }
+.site-header__inner {
+    max-width: 1390px;
+    margin: auto;
+    padding: 17px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.brand { font-weight: 800; font-size: 20px; letter-spacing: .4px; }
+.brand span { font-size: 14px; font-weight: 400; color: #b9d9dd; margin-left: 8px; }
+.dashboard-link { color: #d6eef0; text-decoration: none; font-weight: 700; }
+.dashboard-link:hover, .dashboard-link:focus-visible { text-decoration: underline; }
+
+.page-shell { max-width: 1390px; padding: 30px 28px 56px; margin: auto; }
+.eyebrow { color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: 1.5px; margin: 0 0 6px; }
+h1 { font-size: clamp(26px, 3vw, 36px); line-height: 1.2; margin: 0 0 8px; }
+.page-description { font-size: 15px; color: var(--muted); margin: 0 0 18px; }
+.simulation-notice {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border: 1px solid #d8c8aa;
+    background: #fff9ed;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin-bottom: 18px;
+}
+.simulation-notice strong { font-size: 11px; letter-spacing: .9px; }
+.simulation-notice span { color: #665c4c; font-size: 13px; }
+.page-status { min-height: 19px; margin: 0 0 12px; color: var(--muted); font-size: 12px; }
+.race-sections { display: grid; gap: 26px; }
+.race-group__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #cfd8df;
+}
+.race-group__heading h2 { font-size: 19px; margin: 0; }
+.race-group__heading span { color: var(--muted); font-size: 12px; }
+.race-group__cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 14px;
+}
+
+/* The race title is for navigating the full editor gallery. It is not
+   included in the card itself, as in the approved simplified layout. */
+.race-entry { min-width: 0; }
+.race-entry__title {
+    margin: 0 0 7px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #2c3b49;
+}
+.race-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(20, 40, 55, .04);
+}
+/* Each candidate gets one full row; columns remain equal thirds on mobile. */
+.race-card__column-heads, .candidate-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+}
+.race-card__column-heads {
+    background: #f7f9fb;
+    color: #536274;
+    font-weight: 700;
+    font-size: 11px;
+    border-bottom: 1px solid var(--border);
+}
+.race-card__column-heads span { padding: 8px 4px; text-align: center; }
+.race-card__column-heads span + span { border-left: 1px solid var(--border); }
+.candidate-row { height: 163px; }
+.candidate-row + .candidate-row { border-top: 1px solid var(--border); }
+.candidate-row__person {
+    min-width: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.candidate-row__portrait {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    background: var(--party-color, #73808c);
+}
+.candidate-row__avatar {
+    display: block;
+    flex: 0 0 auto;
+    width: 88px;
+    height: 88px;
+    max-width: 88%;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #eaf0f4;
+}
+.candidate-row__avatar img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.candidate-row__name {
+    min-width: 0;
+    height: 52px;
+    flex: 0 0 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 7px;
+    background: #ffffff;
+    color: #202c38;
+    font-size: 14px;
+    line-height: 1.22;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+.candidate-row__percentage, .candidate-row__votes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    padding: 7px 3px;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    white-space: nowrap;
+    border-left: 1px solid var(--border);
+}
+.candidate-row__percentage { font-size: clamp(22px, 2.6vw, 30px); }
+.candidate-row__votes { font-size: clamp(16px, 2vw, 23px); background: #fafbfc; }
+.candidate-row--vacant .candidate-row__portrait { background: #f2f4f6; }
+.candidate-row--vacant .candidate-row__avatar { outline: 2px dashed var(--party-color); outline-offset: -2px; opacity: .65; }
+.candidate-row--vacant .candidate-row__percentage,
+.candidate-row--vacant .candidate-row__votes { color: #9ba4ad; }
+
+.race-card__summary { padding: 12px 16px 14px; border-top: 1px solid var(--border); background: #f9fbfc; }
+.race-card__summary-label { display: block; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); font-weight: 800; margin-bottom: 4px; }
+.race-card__summary p { margin: 0; color: #344553; font-family: var(--font-body); font-size: 14px; line-height: 1.65; }
+.race-card__summary p + p { margin-top: 11px; }
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+    padding: 20px 28px 30px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 11px;
+}
+
+@media (max-width: 1199px) {
+    .race-group__cards { grid-template-columns: minmax(0, 1fr); max-width: 650px; }
+}
+@media (max-width: 600px) {
+    .site-header__inner { padding: 13px 15px; gap: 10px; }
+    .brand { font-size: 16px; }
+    .brand span { display: block; font-size: 11px; margin: 0; }
+    .dashboard-link { font-size: 11px; text-align: right; }
+    .page-shell { padding: 20px 10px 38px; }
+    .race-group__heading h2 { font-size: 17px; }
+    .race-entry__title { font-size: 14px; }
+    .race-card__column-heads { font-size: 10px; }
+    .race-card__column-heads span { padding: 7px 2px; }
+    .candidate-row { height: 163px; }
+    .candidate-row__portrait { padding: 6px 2px; }
+    .candidate-row__avatar { width: 66px; height: 66px; max-width: 82%; }
+    .candidate-row__name { height: 65px; flex-basis: 65px; padding: 4px 3px; font-size: 11.5px; line-height: 1.2; }
+    .candidate-row__percentage { font-size: clamp(17px, 5.6vw, 23px); }
+    .candidate-row__votes { font-size: clamp(14px, 4.4vw, 18px); }
+    .race-card__summary { padding: 11px; }
+    .race-card__summary p { font-size: 13px; line-height: 1.6; }
+    .site-footer { padding: 18px 13px; }
+}
+@media (max-width: 360px) {
+    .candidate-row__avatar { width: 57px; height: 57px; }
+    .candidate-row__name { font-size: 11px; }
+    .candidate-row__votes { font-size: 13px; }
+    .candidate-row__percentage { font-size: 18px; }
+}
+
+/* Editorial embed controls are external to the embeddable card itself. */
+.race-entry__embed-tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 16px;
+    padding: 9px 0 4px;
+    font-size: 12px;
+}
+.copy-iframe {
+    appearance: none;
+    border: 1px solid #176b75;
+    background: #176b75;
+    color: white;
+    font: 600 12px var(--font-heading);
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 9px 13px;
+}
+.copy-iframe:hover { background: #12545d; }
+.copy-iframe:focus-visible, .race-entry__embed-tools a:focus-visible {
+    outline: 2px solid #152a3b;
+    outline-offset: 3px;
+}
+.race-entry__embed-tools a { color: #176b75; font-weight: 600; }
+.embed-feedback { color: #526474; }
+.embed-manual-code { width: 100%; min-height: 72px; font: 11px Consolas, monospace; }
+
+/* A URL with ?embed=1&race=<race_id> displays just one race. */
+body.beacon-card-embed { background: white; }
+.beacon-card-embed .site-header,
+.beacon-card-embed .page-heading,
+.beacon-card-embed .simulation-notice,
+.beacon-card-embed .site-footer,
+.beacon-card-embed .race-entry__embed-tools { display: none !important; }
+.beacon-card-embed .page-shell { padding: 4px; margin: 0; max-width: none; }
+.beacon-card-embed .page-status { display: none; }
+.beacon-card-embed.embed-load-error .page-status { display: block; padding: 12px; }
+.beacon-card-embed .race-sections { display: block; }
+.beacon-card-embed .race-entry__title { margin: 0 0 7px; }
+.beacon-card-embed .race-card { box-shadow: none; }
+.embedded-demo-notice { display: none; }
+.beacon-card-embed .embedded-demo-notice {
+    display: block;
+    padding: 5px 0 2px;
+    margin: 0;
+    font: 600 10px/1.4 var(--font-heading);
+    letter-spacing: .2px;
+    color: #655239;
+}
+
+/* Editor-only historical introductions, separate from the embeddable card. */
+.race-entry__editor-intro { padding: 0 0 11px; }
+.race-entry__editor-intro .race-entry__title { margin: 0 0 6px; }
+.race-entry__intro-text {
+    margin: 0 0 9px;
+    color: #344553;
+    font: 400 13px/1.65 var(--font-body);
+}
+.race-entry__intro-text + .race-entry__intro-text { margin-top: 10px; }
+.race-entry__intro-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+}
+.copy-intro {
+    appearance: none;
+    border: 1px solid #176b75;
+    color: #176b75;
+    background: #fff;
+    font: 600 12px var(--font-heading);
+    padding: 7px 11px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.copy-intro:hover { background: #e4f1f1; }
+.copy-intro:disabled { opacity: .5; cursor: not-allowed; }
+.copy-intro:focus-visible { outline: 2px solid #152a3b; outline-offset: 2px; }
+.intro-feedback { color: #526474; font-size: 12px; }
+.intro-manual-copy { width: 100%; min-height: 75px; font: 12px/1.5 var(--font-heading); }
+.beacon-card-embed .race-entry__editor-intro { display: none !important; }
+@media (max-width: 600px) {
+    .race-entry__intro-text { font-size: 13px; line-height: 1.6; }
+}
+
+/* Article-opening copy tool: editor-facing, never included in result-card embeds. */
+.article-opening {
+    max-width: 1050px;
+    margin: 0 0 28px;
+    padding: 22px 24px 20px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+    box-shadow: 0 3px 12px rgba(20, 40, 55, .04);
+}
+.article-opening h2 { margin: 0 0 5px; font: 700 21px/1.3 var(--font-heading); }
+.article-opening__hint { margin: 0 0 15px; font-size: 13px; color: var(--muted); }
+.article-opening__modes { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
+.article-opening__mode {
+    appearance: none;
+    padding: 8px 12px;
+    border: 1px solid #afc5c8;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #176b75;
+    font: 600 12px var(--font-heading);
+    cursor: pointer;
+}
+.article-opening__mode.is-selected { background: #176b75; border-color: #176b75; color: #ffffff; }
+.article-opening__mode:focus-visible, .article-opening__copy:focus-visible { outline: 2px solid #152a3b; outline-offset: 3px; }
+.article-opening__preview { border-top: 1px solid var(--border); padding: 15px 0 5px; }
+.article-opening__preview p {
+    margin: 0 0 13px;
+    color: #344553;
+    font: 400 14px/1.75 var(--font-body);
+}
+.article-opening__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.article-opening__copy {
+    appearance: none;
+    border: 1px solid #176b75;
+    background: #176b75;
+    color: #ffffff;
+    font: 600 12px var(--font-heading);
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 9px 13px;
+}
+.article-opening__copy:hover { background: #12545d; }
+.article-opening__feedback { font-size: 12px; color: #526474; }
+.article-opening__manual-copy { width: 100%; min-height: 110px; font: 12px/1.5 var(--font-heading); }
+.beacon-card-embed .article-opening { display: none !important; }
+@media (max-width: 600px) {
+    .article-opening { padding: 16px 14px; }
+    .article-opening h2 { font-size: 18px; }
+    .article-opening__preview p { font-size: 13px; line-height: 1.65; }
+}
+
+/* Editor instructions and full-article HTML export, never used in embeds. */
+.how-to-use {
+    max-width: 1050px;
+    padding: 21px 24px;
+    margin: 0 0 18px;
+    background: #f9fcfd;
+    border: 1px solid #b9d0d5;
+    border-radius: 10px;
+}
+.how-to-use h2 { margin: 0 0 10px; font: 700 21px/1.3 var(--font-heading); }
+.how-to-use__steps { margin: 0 0 16px; padding-left: 22px; color: #344553; font-size: 13px; line-height: 1.6; }
+.how-to-use__steps li + li { margin-top: 6px; }
+.how-to-use__master { border-top: 1px solid #cddce0; padding-top: 15px; }
+.how-to-use__master h3 { font: 700 16px/1.3 var(--font-heading); margin: 0 0 7px; }
+.how-to-use__master p { font-size: 13px; line-height: 1.6; color: #344553; margin: 0 0 8px; }
+.how-to-use__master .how-to-use__note { font-size: 12px; color: #685c46; }
+.how-to-use__master-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding-top: 6px; }
+.how-to-use__copy {
+    appearance: none;
+    border: 1px solid #176b75;
+    background: #176b75;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 9px 13px;
+    font: 600 12px var(--font-heading);
+}
+.how-to-use__copy:hover:not(:disabled) { background: #12545d; }
+.how-to-use__copy:disabled { opacity: .55; cursor: not-allowed; }
+.how-to-use__copy:focus-visible { outline: 2px solid #152a3b; outline-offset: 3px; }
+.how-to-use__feedback { color: #526474; font-size: 12px; }
+.how-to-use__manual-code { width: 100%; min-height: 130px; font: 12px/1.4 Consolas, monospace; }
+.beacon-card-embed .how-to-use { display: none !important; }
+@media (max-width: 600px) {
+    .how-to-use { padding: 16px 14px; }
+    .how-to-use h2 { font-size: 18px; }
+}
