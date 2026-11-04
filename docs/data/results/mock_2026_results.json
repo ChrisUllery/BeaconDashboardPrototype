@@ -7219,7 +7219,7 @@
         }
       ],
       "total_mapped_precincts": 359,
-      "reporting_precincts": 6,
+      "reporting_precincts": 19,
       "coverage_counties": [
         9,
         46
@@ -7228,10 +7228,10 @@
         {
           "county_code": 46,
           "map_id": "100",
-          "reported": false,
+          "reported": true,
           "votes": {
-            "DEM": 174,
-            "REP": 136
+            "DEM": 408,
+            "REP": 618
           }
         },
         {
@@ -7318,10 +7318,10 @@
         {
           "county_code": 46,
           "map_id": "115",
-          "reported": false,
+          "reported": true,
           "votes": {
-            "DEM": 309,
-            "REP": 131
+            "DEM": 731,
+            "REP": 626
           }
         },
         {
@@ -7345,10 +7345,10 @@
         {
           "county_code": 46,
           "map_id": "118",
-          "reported": false,
+          "reported": true,
           "votes": {
-            "DEM": 172,
-            "REP": 65
+            "DEM": 449,
+            "REP": 295
           }
         },
         {
@@ -7372,10 +7372,10 @@
         {
           "county_code": 46,
           "map_id": "121",
-          "reported": false,
+          "reported": true,
           "votes": {
-            "DEM": 118,
-            "REP": 53
+            "DEM": 302,
+            "REP": 284
           }
         },
         {
@@ -7471,10 +7471,10 @@
         {
           "county_code": 46,
           "map_id": "135",
-          "reported": false,
+          "reported": true,
           "votes": {
-            "DEM": 140,
-            "REP": 59
+            "DEM": 337,
+            "REP": 298
           }
         },
         {
@@ -7489,10 +7489,10 @@
         {
           "county_code": 46,
           "map_id": "137",
-          "reported": false,
+          "reported": true,
           "votes": {
-            "DEM": 136,
-            "REP": 62
+            "DEM": 394,
+            "REP": 241
           }
         },
         {
@@ -7507,10 +7507,10 @@
         {
           "county_code": 46,
           "map_id": "238",
-          "reported": false,
+          "reported": true,
           "votes": {
-            "DEM": 183,
-            "REP": 67
+            "DEM": 561,
+            "REP": 380
           }
         },
         {
@@ -7525,10 +7525,10 @@
         {
           "county_code": 46,
           "map_id": "240",
-          "reported": false,
+          "reported": true,
           "votes": {
-            "DEM": 550,
-            "REP": 170
+            "DEM": 1262,
+            "REP": 793
           }
         },
         {
@@ -7543,37 +7543,37 @@
         {
           "county_code": 46,
           "map_id": "242",
-          "reported": false,
+          "reported": true,
           "votes": {
-            "DEM": 259,
-            "REP": 92
+            "DEM": 756,
+            "REP": 458
           }
         },
         {
           "county_code": 46,
           "map_id": "243",
-          "reported": false,
+          "reported": true,
           "votes": {
-            "DEM": 276,
-            "REP": 123
+            "DEM": 679,
+            "REP": 461
           }
         },
         {
           "county_code": 46,
           "map_id": "244",
-          "reported": false,
+          "reported": true,
           "votes": {
-            "DEM": 570,
-            "REP": 274
+            "DEM": 572,
+            "REP": 277
           }
         },
         {
           "county_code": 46,
           "map_id": "245",
-          "reported": false,
+          "reported": true,
           "votes": {
-            "DEM": 686,
-            "REP": 323
+            "DEM": 1536,
+            "REP": 963
           }
         },
         {
@@ -7615,10 +7615,10 @@
         {
           "county_code": 46,
           "map_id": "300",
-          "reported": false,
+          "reported": true,
           "votes": {
-            "DEM": 92,
-            "REP": 41
+            "DEM": 487,
+            "REP": 432
           }
         },
         {
@@ -16742,5 +16742,5 @@
       "mock": false
     }
   ],
-  "last_source_update_utc": "2026-11-04T04:01:25Z"
+  "last_source_update_utc": "2026-11-04T04:11:25Z"
 }
