@@ -280,23 +280,20 @@
     }
 
     function resultsSentence(race, data) {
-        const {candidates, reported, precinctCount, totalVotes} = data;
+        const {candidates, totalVotes} = data;
         const where = race.office === "GOV" ? "the governor's race in Bucks County" : titleFor(race);
-        const start = `With ${roundedPercent(reported, precinctCount)}% of voting precincts reporting in, `;
-        const ending = reported < precinctCount
-            ? "Ballots are still being tallied."
-            : "All voting precincts have reported.";
-        if (!totalVotes) return `No candidate votes have been reported yet in ${where}. ${roundedPercent(reported, precinctCount)}% of voting precincts are reporting.`;
+        if (!totalVotes) return `No candidate votes have been reported yet in ${where}.`;
+        const ending = "Results are unofficial and may change.";
         if (candidates.length === 1) {
             const only = candidates[0];
             const opponent = missingChallenger(only);
-            return `${start}${fullName(only)} has received ${number(only.votes)} votes in ${where} with ${opponent.name.toLowerCase()}. ${ending}`;
+            return `${fullName(only)} has received ${number(only.votes)} votes in ${where} with ${opponent.name.toLowerCase()}. ${ending}`;
         }
         const [first, second] = candidates;
         if (first.votes === second.votes) {
-            return `${start}${fullName(first)} and ${fullName(second)} are tied for the lead in ${where}, each with ${roundedPercent(first.votes, totalVotes)}% of ${number(totalVotes)} votes. ${ending}`;
+            return `${fullName(first)} and ${fullName(second)} are tied for the lead in ${where}, each with ${roundedPercent(first.votes, totalVotes)}% of ${number(totalVotes)} votes. ${ending}`;
         }
-        return `${start}${fullName(first)} leads ${fullName(second)} in ${where} in a ${roundedPercent(first.votes, totalVotes)}-${roundedPercent(second.votes, totalVotes)} split of ${number(totalVotes)} votes. ${ending}`;
+        return `${fullName(first)} leads ${fullName(second)} in ${where} in a ${roundedPercent(first.votes, totalVotes)}-${roundedPercent(second.votes, totalVotes)} split of ${number(totalVotes)} votes. ${ending}`;
     }
 
     // These two races cross county lines. Provide an additional paragraph
@@ -316,21 +313,19 @@
     function countyBreakdownSentence(race, county) {
         const precincts = race.precincts.filter(p => Number(p.county_code) === county.code);
         if (!precincts.length) throw new Error(`Missing ${county.name} district precincts for ${race.race_id}`);
-        // Reuse the same tallying and validation as the full-race card.
         const data = summarizeRace({...race, precincts, total_mapped_precincts: precincts.length});
         const place = `the ${county.name} County portion of the district`;
-        const reportedPercent = roundedPercent(data.reported, data.precinctCount);
         if (!data.totalVotes) {
-            return `No candidate votes have been reported in ${place}; ${reportedPercent}% of voting precincts are reporting.`;
+            return `No candidate votes have been reported in ${place}.`;
         }
         const [first, second] = data.candidates;
         if (!second) {
-            return `In ${place}, ${familyName(first.name)} has received ${number(first.votes)} votes, with ${reportedPercent}% of voting precincts reporting.`;
+            return `In ${place}, ${familyName(first.name)} has received ${number(first.votes)} votes.`;
         }
         if (first.votes === second.votes) {
-            return `In ${place}, ${familyName(first.name)} and ${familyName(second.name)} are tied with ${number(first.votes)} votes each, with ${reportedPercent}% of voting precincts reporting.`;
+            return `In ${place}, ${familyName(first.name)} and ${familyName(second.name)} are tied with ${number(first.votes)} votes each.`;
         }
-        return `In ${place}, ${familyName(first.name)} leads ${familyName(second.name)} in a ${roundedPercent(first.votes, data.totalVotes)}-${roundedPercent(second.votes, data.totalVotes)} split of ${number(data.totalVotes)} votes, with ${reportedPercent}% of voting precincts reporting.`;
+        return `In ${place}, ${familyName(first.name)} leads ${familyName(second.name)} in a ${roundedPercent(first.votes, data.totalVotes)}-${roundedPercent(second.votes, data.totalVotes)} split of ${number(data.totalVotes)} votes.`;
     }
 
     function countyBreakdownParagraph(race) {
@@ -635,9 +630,6 @@
 
     function cardMarkup(race, withTools = true, history = null, countyHistory = null, earlierHistory = null) {
         const data = summarizeRace(race);
-        const pendingVoteNote = data.votesAwaitingPrecinctReturn
-            ? `<p>Includes ${number(data.votesAwaitingPrecinctReturn)} candidate votes from precincts whose Election Day returns have not yet been posted.</p>`
-            : "";
         const rows = data.candidates.map(candidate => candidateMarkup(candidate, data.totalVotes, race.race_id));
         if (data.candidates.length === 1) rows.push(candidateMarkup(missingChallenger(data.candidates[0]), data.totalVotes, race.race_id, true));
         const title = escapeHtml(titleFor(race));
@@ -647,7 +639,7 @@
             <article class="race-card" data-race-id="${escapeHtml(race.race_id)}" aria-label="${title} results">
                 <div class="race-card__column-heads" aria-hidden="true"><span></span><span>Vote share</span><span>Total votes</span></div>
                 <div class="race-card__candidates">${rows.join("")}</div>
-                <div class="race-card__summary"><span class="race-card__summary-label">Current results</span><p>${escapeHtml(resultsSentence(race, data))}</p>${countyParagraph ? `<p>${escapeHtml(countyParagraph)}</p>` : ""}${pendingVoteNote}</div>
+                <div class="race-card__summary"><span class="race-card__summary-label">Current results</span><p>${escapeHtml(resultsSentence(race, data))}</p>${countyParagraph ? `<p>${escapeHtml(countyParagraph)}</p>` : ""}</div>
             </article>
             ${withTools ? `<div class="race-entry__embed-tools">
                 <button type="button" class="copy-iframe" data-race-id="${escapeHtml(race.race_id)}">Copy iframe code</button>
