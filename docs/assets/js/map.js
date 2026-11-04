@@ -278,7 +278,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const status = precinct.reported
             ? `${formatNumber(total)} listed-candidate votes; precinct reporting`
             : total > 0
-                ? `${formatNumber(total)} listed-candidate votes available; Election Day precinct returns not yet posted`
+                ? `${formatNumber(total)} listed-candidate votes available`
                 : "Awaiting precinct results";
         return `<div class="precinct-popup">
             <strong>${escapeHtml(mapProps.precinct_name)}</strong>
