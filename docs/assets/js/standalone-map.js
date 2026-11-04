@@ -72,7 +72,7 @@
             .map(c => `<div>${esc(c.name)} (${esc(c.party)}): <b>${number(c.votes)} (${pct(c.votes,n)})</b></div>`).join("")
             : "No reported votes yet.";
         return `<div class="precinct-popup"><strong>${esc(title)}</strong>${county?`<div>${esc(county)} County</div>`:""}`+
-            `<div>${rows}</div><div class="counted">${number(a.reported)} of ${number(a.total)} precincts reporting${extra}</div></div>`;
+            `<div>${rows}</div></div>`;
     }
     function hatchPattern() {
         const canvas = document.createElement("canvas");
