@@ -85,7 +85,7 @@
         return ctx.createPattern(canvas,"repeat");
     }
     async function loadJSON(url) {
-        const response=await fetch(url);
+        const response=await fetch(url,{cache:"no-store"});
         if (!response.ok) throw new Error(`${url}: HTTP ${response.status}`);
         return response.json();
     }

@@ -7,6 +7,7 @@
     const LOCAL_MAP_URL = new URL("../map-viewer/", document.baseURI);
     const DATA_URL = "../data/results/mock_2026_results.json";
     const EMBED_HEIGHT = 680;
+    const CACHE_VERSION = "20261103mapfix1";
     const COUNTIES = {9: "Bucks", 39: "Lehigh", 46: "Montgomery"};
     const GROUPS = [
         {office: "GOV", name: "Governor"},
@@ -57,6 +58,7 @@
         url.hash = "";
         url.searchParams.set("race", raceId);
         url.searchParams.set("view", view);
+        url.searchParams.set("v", CACHE_VERSION);
         // The independent map viewer always limits the governor race to Bucks.
         return url.href;
     }
@@ -74,6 +76,7 @@
         url.searchParams.set("all", "1");
         url.searchParams.set("race", "pa01");
         url.searchParams.set("view", "precinct");
+        url.searchParams.set("v", CACHE_VERSION);
         return url.href;
     }
     function closeMasterPreview() {
