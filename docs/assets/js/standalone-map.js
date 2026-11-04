@@ -60,9 +60,8 @@
     function aggregate(precincts,roster) {
         const result = {total:precincts.length,reported:0,votes:emptyVotes(roster)};
         for (const p of precincts) {
-            if (!p.reported) continue;
-            result.reported++;
-            for (const party of Object.keys(result.votes)) result.votes[party] += Number(p.votes[party]||0);
+            if (p.reported) result.reported++;
+            for (const party of Object.keys(result.votes)) result.votes[party] += Number((p.votes||{})[party]||0);
         }
         return result;
     }
@@ -107,7 +106,7 @@
             legend.innerHTML='<strong class="legend-title">Precinct reporting</strong><div class="legend-foot"></div>';
         }
         legend.querySelector(".legend-foot").innerHTML=view==="precinct"
-            ? '<span class="legend-not-reported"></span> Hatched precincts have not reported'
+            ? '<span class="legend-not-reported"></span> Hatched precincts have no available candidate votes'
             : 'Gray means no reported votes';
         legend.hidden=false;
     }
@@ -119,7 +118,7 @@
             loadJSON(ROOT+"maps/precincts_2024.geojson"),
             loadJSON(ROOT+"maps/aggregated_boundaries_2024.geojson")
         ]);
-        if (results.status && !String(results.status).includes("SIMULATED")) throw new Error("Expected simulated election data");
+        if (results.status && !String(results.status).includes("UNOFFICIAL 2026 GENERAL ELECTION")) throw new Error("Expected unofficial election data");
         if (!Array.isArray(results.races)||!Array.isArray(geometry.features)||!Array.isArray(boundaries.features)) throw new Error("Incomplete map files");
         const races=new Map(results.races.map(r => [r.race_id,r]));
         const geometries=new Map(geometry.features.map(f => [precinctKey(f.properties),f]));
@@ -175,11 +174,11 @@
                 style:f=>{
                     const p=byKey.get(precinctKey(f.properties));
                     return {color:"#2b2b2b",weight:0.9,fillOpacity:0.78,
-                        fillColor:p.reported?fillColor(voteMargin(p.votes,sides),total(p.votes)>0):hatch};
+                        fillColor:(p.reported||total(p.votes||{})>0)?fillColor(voteMargin(p.votes,sides),total(p.votes||{})>0):hatch};
                 },
                 onEachFeature:(f,layer)=>{
                     const p=byKey.get(precinctKey(f.properties));
-                    const a={total:1,reported:p.reported?1:0,votes:p.reported?p.votes:emptyVotes(race.candidate_roster)};
+                    const a={total:1,reported:p.reported?1:0,votes:p.votes||emptyVotes(race.candidate_roster)};
                     layer.bindPopup(popup(f.properties.precinct_name||precinctKey(p),countyName(p.county_code),a,race.candidate_roster));
                     layer.on("mouseover",()=>layer.setStyle({color:"#111",weight:2,fillOpacity:0.9}));
                     layer.on("mouseout",()=>precinctLayer.resetStyle(layer));
@@ -192,7 +191,7 @@
                 const layer=L.geoJSON(feature, {
                     renderer,
                     style:{color:"#253744",weight:1.7,fillOpacity:0.78,
-                        fillColor:fillColor(voteMargin(a.votes,sides),a.reported>0&&total(a.votes)>0)},
+                        fillColor:fillColor(voteMargin(a.votes,sides),total(a.votes)>0)},
                     onEachFeature:(_feature,shape)=>{
                         shape.bindPopup(popup(label,county,a,race.candidate_roster,". Click to view precincts."));
                         shape.on("mouseover",()=>shape.setStyle({color:"#111",weight:3,fillOpacity:0.9}));
@@ -249,7 +248,7 @@
                 const shapeGroup=L.geoJSON(feature,{
                     renderer,
                     style:{color:"#253744",weight:1.7,fillOpacity:0.78,
-                        fillColor:fillColor(voteMargin(a.votes,sides),a.reported>0&&total(a.votes)>0)},
+                        fillColor:fillColor(voteMargin(a.votes,sides),total(a.votes)>0)},
                     onEachFeature:(_feature,shape)=>{
                         // Hover shows a summary; clicking drills to that race's precincts.
                         if (typeof shape.bindTooltip==="function") {

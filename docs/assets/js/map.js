@@ -183,9 +183,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
             const county = countyTotals.get(precinct.county_code);
             county.total += 1;
-            if (!precinct.reported) continue;
-            county.reporting += 1;
-            for (const [party, count] of Object.entries(precinct.votes)) {
+            if (precinct.reported) county.reporting += 1;
+            for (const [party, count] of Object.entries(precinct.votes || {})) {
                 if (!(party in totals)) throw new Error(`Unexpected party ${party} in ${race.race_id}`);
                 totals[party] += Number(count);
                 county.votes[party] += Number(count);
@@ -256,10 +255,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     function normalStyle(layer) {
         const precinct = activePrecincts.get(layer._beaconKey);
         return {
-            fillColor: precinct && !precinct.reported
+            fillColor: precinct && !precinct.reported && countTotal(precinct.votes || {}) === 0
                 ? unreportedPrecinctHatch
                 : precinctColor(precinct ? margin(precinct.votes) : null,
-                    Boolean(precinct && precinct.reported && countTotal(precinct.votes) > 0)),
+                    Boolean(precinct && countTotal(precinct.votes || {}) > 0)),
             fillOpacity: 0.78,
             color: "#2b2b2b",
             weight: 0.9
@@ -270,17 +269,21 @@ document.addEventListener("DOMContentLoaded", async () => {
         const precinct = activePrecincts.get(layer._beaconKey);
         if (!precinct) return "";
         const mapProps = layer.feature.properties;
-        const total = precinct.reported ? countTotal(precinct.votes) : 0;
+        const total = countTotal(precinct.votes || {});
         const rows = currentRace.candidate_roster.map(c => {
             const votes = Number(precinct.votes[c.party] || 0);
             return `<div>${escapeHtml(c.name)} (${escapeHtml(c.party)}):
                 <b>${formatNumber(votes)} (${percent(votes, total)})</b></div>`;
         }).join("");
-        const status = precinct.reported ? `${formatNumber(total)} counted votes` : "Awaiting precinct results";
+        const status = precinct.reported
+            ? `${formatNumber(total)} listed-candidate votes; precinct reporting`
+            : total > 0
+                ? `${formatNumber(total)} listed-candidate votes available; Election Day precinct returns not yet posted`
+                : "Awaiting precinct results";
         return `<div class="precinct-popup">
             <strong>${escapeHtml(mapProps.precinct_name)}</strong>
             <div>${escapeHtml(COUNTY[mapProps.county_code] || "Unknown")} County</div>
-            <hr>${precinct.reported ? rows : "No reported results yet."}
+            <hr>${precinct.reported || total > 0 ? rows : "No reported results yet."}
             <hr><strong>${status}</strong>
         </div>`;
     }
@@ -347,7 +350,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             <div>${formatNumber(aggregate.reported)} of ${formatNumber(aggregate.total)} precincts reporting</div>
             ${lead}<hr><strong>${action}</strong></div>`;
         const baseStyle = {
-            fillColor: precinctColor(margin(aggregate.votes, race), aggregate.reported > 0 && totalVotes > 0),
+            fillColor: precinctColor(margin(aggregate.votes, race), totalVotes > 0),
             fillOpacity: 0.78,
             color: "#253744",
             weight: 1.7
@@ -400,7 +403,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             <div class="margin-legend-bar"></div>
             <div class="margin-legend-labels"><span>${escapeHtml(pair.left)} +50</span>
             <span>0</span><span>${escapeHtml(pair.right)} +50</span></div>
-            <small>Percentage points of all listed candidate votes; ${currentView === "precinct" ? "hatched = not reported" : "gray = no results"}</small>`;
+            <small>Percentage points of all listed candidate votes; ${currentView === "precinct" ? "hatched = no candidate votes and no precinct return" : "gray = no candidate votes"}</small>`;
     }
 
     function historicalInfo(history) {
@@ -429,9 +432,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         let current;
         if (!summary.totalVotes) {
-            current = `No simulated votes have been reported yet ${coverage}.`;
+            current = `No candidate votes have been reported yet ${coverage}.`;
         } else if (!b) {
-            current = `${labelName(a)} has ${formatNumber(a.votes)} votes (${percent(a.votes, summary.totalVotes)}) ${coverage}. No other named candidate is included in this demonstration.`;
+            current = `${labelName(a)} has ${formatNumber(a.votes)} votes (${percent(a.votes, summary.totalVotes)}) ${coverage}. No other named candidate is listed for this race.`;
         } else if (a.votes === b.votes) {
             current = `${labelName(a)} and ${labelName(b)} are tied with ${formatNumber(a.votes)} votes (${percent(a.votes, summary.totalVotes)}) each ${coverage}.`;
         } else {
@@ -453,12 +456,12 @@ document.addEventListener("DOMContentLoaded", async () => {
             comparison = `A historical comparison for ${history.year} is not available.`;
         }
         if (isGovernor) comparison += governorBucksEmbed
-            ? " The historical result is statewide; these simulated 2026 results cover Bucks County only."
-            : " The historical result is statewide; the current demonstration covers only three counties.";
+            ? " The historical result is statewide; the current 2026 returns cover Bucks County only."
+            : " The historical result is statewide; current returns cover only three counties.";
         if (!history.matching_2024_precinct_scope && !isGovernor) {
             comparison += " Historical and 2024 precinct district coverage differ, so precinct-level comparisons require verification.";
         }
-        return `SIMULATED 2026 RESULTS - NOT ACTUAL ELECTION RETURNS.\n\nWith ${formatNumber(reported)} of ${formatNumber(n)} mapped precincts reporting (${pctReporting}), ${current}\n\n${comparison}`;
+        return `UNOFFICIAL 2026 ELECTION RESULTS.\n\nWith ${formatNumber(reported)} of ${formatNumber(n)} mapped precincts reporting (${pctReporting}), ${current}\n\n${comparison}`;
     }
 
     function updatePanel(race, history) {
@@ -479,11 +482,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         qs(".section-heading .eyebrow").textContent = raceGroup(race.office);
         qs(".section-heading h1").textContent = `${raceName(race)} Results`;
         qs(".section-heading .section-note").textContent =
-            `Nov. 3, 2026 general election | Simulated returns | ${countyList(race)}`;
-        qs(".demo-badge").textContent = "2026 SIMULATED DEMO";
+            `Nov. 3, 2026 general election | Unofficial returns | ${countyList(race)}`;
+        qs(".demo-badge").textContent = "2026 GENERAL ELECTION";
         qs(".status-strip").innerHTML = `
             <span><strong>${formatNumber(reported)} of ${formatNumber(totalPrecincts)}</strong> mapped precincts reporting (${percent(reported, totalPrecincts)})</span>
-            <span>${formatNumber(votes)} simulated votes</span>
+            <span>${formatNumber(votes)} candidate votes</span>
             ${race.office === "GOV" ? (governorBucksEmbed
                 ? "<span>BUCKS COUNTY ONLY, NOT STATEWIDE</span>"
                 : "<span>THREE COUNTIES ONLY, NOT STATEWIDE</span>") : ""}`;
@@ -512,7 +515,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         <small class="county-vote-share">${percent(county.votes[c.party] || 0, totalCounty)}</small></td>`).join("")}</tr>`;
             }).join("");
 
-        qs(".map-panel .small-tag").textContent = "SIMULATED 2026 RESULTS";
+        qs(".map-panel .small-tag").textContent = "UNOFFICIAL 2026 RESULTS";
         qs("#map-status").textContent = `${formatNumber(totalPrecincts)} precinct polygons | ${formatNumber(reported)} reporting | Hover for details, click to keep open`;
 
         const past = historicalInfo(history);
@@ -523,8 +526,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             <strong>${formatNumber(c.votes)}</strong></div>`).join("");
         const warnings = [];
         if (race.office === "GOV") warnings.push(governorBucksEmbed
-            ? "The 2022 baseline is statewide; simulated 2026 votes cover Bucks County only."
-            : "The 2022 baseline is statewide; simulated 2026 votes cover Bucks, Lehigh and Montgomery only.");
+            ? "The 2022 baseline is statewide; 2026 returns cover Bucks County only."
+            : "The 2022 baseline is statewide; 2026 returns cover Bucks, Lehigh and Montgomery only.");
         if (race.office !== "GOV" && !history.matching_2024_precinct_scope) warnings.push("The historical district's precinct coverage differs from the 2024 map. Precinct-to-precinct comparisons are not validated.");
         warnings.push("2026 precinct and district assignments still require independent confirmation.");
         qs("#history-note").textContent = warnings.join(" ");
@@ -644,9 +647,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
             const target = aggregates.get(group);
             target.total += 1;
-            if (!precinct.reported) continue;
-            target.reported += 1;
-            for (const [party, count] of Object.entries(precinct.votes)) {
+            if (precinct.reported) target.reported += 1;
+            for (const [party, count] of Object.entries(precinct.votes || {})) {
                 target.votes[party] = (target.votes[party] || 0) + Number(count);
             }
         }
@@ -758,12 +760,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         qs(".section-heading h1").textContent = house
             ? "All Tracked Pennsylvania House Races" : "All Tracked Pennsylvania Senate Races";
         qs(".section-heading .section-note").textContent =
-            "Nov. 3, 2026 general election | Simulated returns | Regional tracked districts";
+            "Nov. 3, 2026 general election | Unofficial returns | Regional tracked districts";
         const n = districtRows.reduce((s,r) => s + r.aggregate.total,0);
         const reported = districtRows.reduce((s,r) => s + r.aggregate.reported,0);
         qs(".status-strip").innerHTML = `<span><strong>${races.length}</strong> tracked districts</span>
             <span>${formatNumber(reported)} of ${formatNumber(n)} mapped precincts reporting (${percent(reported,n)})</span>
-            <span>SIMULATED, NOT STATEWIDE COVERAGE</span>`;
+            <span>REGIONAL COVERAGE, NOT STATEWIDE</span>`;
         qs(".candidate-grid").hidden = true;
         qs(".results-bar").hidden = true;
         qs("#county-panel").hidden = true;
@@ -864,8 +866,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (!Array.isArray(mock.races) || !Array.isArray(history.races)) {
             throw new Error("Unexpected race data format");
         }
-        if (mock.status && !String(mock.status).includes("SIMULATED")) {
-            throw new Error("This dashboard is configured for simulated data only");
+        if (mock.status && !String(mock.status).includes("UNOFFICIAL 2026 GENERAL ELECTION")) {
+            throw new Error("Expected unofficial 2026 election data");
         }
         if (boundaries.type !== "FeatureCollection" || !Array.isArray(boundaries.features)) {
             throw new Error("Missing or malformed merged boundary GeoJSON");

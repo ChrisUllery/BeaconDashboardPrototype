@@ -63,7 +63,7 @@
 
     function iframeCode(raceId, raceLabel, view) {
         const url = escapeHtml(mapUrl(PUBLISHED_MAP_URL, raceId, view));
-        const title = escapeHtml(`The Beacon simulated 2026 election map: ${raceLabel}`);
+        const title = escapeHtml(`The Beacon 2026 election results map: ${raceLabel}`);
         return `<iframe src="${url}" title="${title}" width="100%" height="${EMBED_HEIGHT}" style="border:0;max-width:100%;" loading="lazy"></iframe>`;
     }
 
@@ -243,8 +243,8 @@
             if (!response.ok) throw new Error(`Election race data returned HTTP ${response.status}`);
             const payload = await response.json();
             if (!Array.isArray(payload.races)) throw new Error("Election race list is missing");
-            if (payload.status && !String(payload.status).includes("SIMULATED")) {
-                throw new Error("This editor page is configured for the simulated 2026 dataset only");
+            if (payload.status && !String(payload.status).includes("UNOFFICIAL 2026 GENERAL ELECTION")) {
+                throw new Error("Expected unofficial 2026 election data");
             }
             const html = GROUPS.map(group => {
                 const items = payload.races.filter(race => race.office === group.office);

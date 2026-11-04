@@ -33,7 +33,7 @@
         // The selectors are populated asynchronously by map.js.
         if (!output || !raceField || !viewField || !raceField.value) return;
         const url = embedUrl();
-        const title = "The Beacon simulated election results map";
+        const title = "The Beacon unofficial election results map";
         output.value = `<iframe src="${url.replaceAll("&", "&amp;")}" title="${title}" width="100%" height="${height()}" style="border:0;max-width:100%;" loading="lazy"></iframe>`;
         preview.href = url;
     }
@@ -46,7 +46,7 @@
         || window.location.protocol === "file:";
     notice.textContent = local
         ? "Local preview only. After GitHub Pages is live, open the published dashboard and copy the iframe code there."
-        : "This iframe loads the live map from this site's URL. The published map includes simulated 2026 returns.";
+        : "This iframe loads the live map from this site's URL. The published map displays unofficial 2026 returns.";
 
     heightField.addEventListener("input", refresh);
     raceField.addEventListener("change", refresh);

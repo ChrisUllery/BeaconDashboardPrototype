@@ -233,14 +233,15 @@
             totals.set(candidate.party, 0);
         });
         let reported = 0;
+        let votesAwaitingPrecinctReturn = 0;
         for (const precinct of precincts) {
-            if (!precinct.reported) continue;
-            reported += 1;
+            if (precinct.reported) reported += 1;
             for (const [party, value] of Object.entries(precinct.votes || {})) {
                 if (!totals.has(party) || !Number.isSafeInteger(value) || value < 0) {
                     throw new Error(`Invalid candidate votes in ${race.race_id}`);
                 }
                 totals.set(party, totals.get(party) + value);
+                if (!precinct.reported) votesAwaitingPrecinctReturn += value;
             }
         }
         const candidates = race.candidate_roster.map((candidate, index) => ({
@@ -252,7 +253,7 @@
         // Original roster order is the deterministic tiebreaker; ties are still described as ties.
         candidates.sort((a, b) => b.votes - a.votes || a.sourceOrder - b.sourceOrder);
         const totalVotes = candidates.reduce((sum, candidate) => sum + candidate.votes, 0);
-        return {candidates, reported, precinctCount: precincts.length, totalVotes};
+        return {candidates, reported, precinctCount: precincts.length, totalVotes, votesAwaitingPrecinctReturn};
     }
 
     function missingChallenger(candidate) {
@@ -567,7 +568,7 @@
         const height = Math.max(2, race.candidate_roster.length) * 163 + 255
             + (COUNTY_BREAKDOWN_RACES[race.race_id] ? 175 : 0);
         const url = cardUrl(race.race_id, true).replaceAll("&", "&amp;").replaceAll('"', "&quot;");
-        const label = escapeHtml(`Simulated 2026 election results: ${titleFor(race)}`);
+        const label = escapeHtml(`Unofficial 2026 election results: ${titleFor(race)}`);
         return `<iframe src="${url}" title="${label}" width="100%" height="${height}" loading="lazy" style="display:block;width:100%;max-width:650px;border:0;"></iframe>`;
     }
 
@@ -634,6 +635,9 @@
 
     function cardMarkup(race, withTools = true, history = null, countyHistory = null, earlierHistory = null) {
         const data = summarizeRace(race);
+        const pendingVoteNote = data.votesAwaitingPrecinctReturn
+            ? `<p>Includes ${number(data.votesAwaitingPrecinctReturn)} candidate votes from precincts whose Election Day returns have not yet been posted.</p>`
+            : "";
         const rows = data.candidates.map(candidate => candidateMarkup(candidate, data.totalVotes, race.race_id));
         if (data.candidates.length === 1) rows.push(candidateMarkup(missingChallenger(data.candidates[0]), data.totalVotes, race.race_id, true));
         const title = escapeHtml(titleFor(race));
@@ -643,7 +647,7 @@
             <article class="race-card" data-race-id="${escapeHtml(race.race_id)}" aria-label="${title} results">
                 <div class="race-card__column-heads" aria-hidden="true"><span></span><span>Vote share</span><span>Total votes</span></div>
                 <div class="race-card__candidates">${rows.join("")}</div>
-                <div class="race-card__summary"><span class="race-card__summary-label">Current results</span><p>${escapeHtml(resultsSentence(race, data))}</p>${countyParagraph ? `<p>${escapeHtml(countyParagraph)}</p>` : ""}</div>
+                <div class="race-card__summary"><span class="race-card__summary-label">Current results</span><p>${escapeHtml(resultsSentence(race, data))}</p>${countyParagraph ? `<p>${escapeHtml(countyParagraph)}</p>` : ""}${pendingVoteNote}</div>
             </article>
             ${withTools ? `<div class="race-entry__embed-tools">
                 <button type="button" class="copy-iframe" data-race-id="${escapeHtml(race.race_id)}">Copy iframe code</button>
@@ -654,8 +658,8 @@
     }
 
     function renderPage(payload, histories = new Map(), countyHistories = new Map()) {
-        if (!Array.isArray(payload.races) || !String(payload.status || "").includes("SIMULATED")) {
-            throw new Error("Expected simulated election data with a races array");
+        if (!Array.isArray(payload.races) || !String(payload.status || "").includes("UNOFFICIAL 2026 GENERAL ELECTION")) {
+            throw new Error("Expected unofficial election data with a races array");
         }
         const ids = new Set();
         for (const race of payload.races) {
@@ -666,7 +670,7 @@
             const race = payload.races.find(item => item.race_id === embeddedRaceId);
             if (!race) throw new Error(`Unknown race for iframe: ${embeddedRaceId || "(none)"}`);
             document.querySelector("#race-sections").innerHTML = cardMarkup(race, false)
-                + `<p class="embedded-demo-notice">SIMULATED 2026 RESULTS — NOT ACTUAL ELECTION RETURNS</p>`;
+                + `<p class="embedded-demo-notice">UNOFFICIAL 2026 ELECTION RESULTS</p>`;
             document.querySelector("#page-status").textContent = "";
             return;
         }
@@ -692,7 +696,7 @@
             : payload.races.length !== 15
                 ? "Expected 15 races. Check the results data before copying all."
                 : "Ready: all 15 race sections and embeds.";
-        document.querySelector("#page-status").textContent = `${number(payload.races.length)} race cards loaded. Simulated results are checked every two minutes. Embed codes will work after this page is published to GitHub Pages.`;
+        document.querySelector("#page-status").textContent = `${number(payload.races.length)} race cards loaded. Unofficial results are checked every two minutes. Verify totals against county sources.`;
     }
 
     let previousJson = null;

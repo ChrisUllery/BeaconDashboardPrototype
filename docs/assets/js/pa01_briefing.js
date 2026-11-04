@@ -180,7 +180,7 @@ window.BeaconPa01Briefing = (() => {
     }
 
     function copyText(briefing) {
-        return "SIMULATED 2026 RESULTS - NOT ACTUAL ELECTION RETURNS.\n\n" +
+        return "UNOFFICIAL 2026 ELECTION RESULTS.\n\n" +
             briefing.sections.map(s => s.text).join("\n\n");
     }
 
@@ -189,7 +189,7 @@ window.BeaconPa01Briefing = (() => {
         container.classList.add("briefing-mode");
         const warning = document.createElement("p");
         warning.className = "briefing-warning";
-        warning.textContent = "SIMULATED 2026 RESULTS - NOT ACTUAL ELECTION RETURNS";
+        warning.textContent = "UNOFFICIAL 2026 ELECTION RESULTS";
         container.appendChild(warning);
         for (const section of briefing.sections) {
             const wrapper = document.createElement("section");
