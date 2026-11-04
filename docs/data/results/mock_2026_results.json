@@ -4189,8 +4189,8 @@
           "map_id": "000010",
           "reported": false,
           "votes": {
-            "DEM": 1043,
-            "REP": 934,
+            "DEM": 1044,
+            "REP": 935,
             "LIB": 27
           }
         },
@@ -5109,7 +5109,7 @@
           "map_id": "000950",
           "reported": false,
           "votes": {
-            "DEM": 603,
+            "DEM": 604,
             "REP": 401,
             "LIB": 18
           }
@@ -5339,8 +5339,8 @@
           "map_id": "001180",
           "reported": false,
           "votes": {
-            "REP": 744,
-            "DEM": 642,
+            "REP": 745,
+            "DEM": 643,
             "LIB": 16
           }
         },
@@ -5370,7 +5370,7 @@
           "reported": false,
           "votes": {
             "DEM": 684,
-            "REP": 528,
+            "REP": 529,
             "LIB": 12
           }
         },
@@ -5379,8 +5379,8 @@
           "map_id": "001200",
           "reported": false,
           "votes": {
-            "DEM": 672,
-            "REP": 622,
+            "DEM": 746,
+            "REP": 656,
             "LIB": 13
           }
         },
@@ -5389,7 +5389,7 @@
           "map_id": "001210",
           "reported": false,
           "votes": {
-            "DEM": 807,
+            "DEM": 808,
             "REP": 755,
             "LIB": 16
           }
@@ -5839,7 +5839,7 @@
           "map_id": "001652",
           "reported": false,
           "votes": {
-            "DEM": 750,
+            "DEM": 751,
             "REP": 358,
             "LIB": 13
           }
@@ -6040,7 +6040,7 @@
           "reported": false,
           "votes": {
             "DEM": 775,
-            "REP": 394,
+            "REP": 395,
             "LIB": 7
           }
         },
@@ -6049,7 +6049,7 @@
           "map_id": "001825",
           "reported": false,
           "votes": {
-            "DEM": 710,
+            "DEM": 712,
             "REP": 471,
             "LIB": 14
           }
@@ -6389,7 +6389,7 @@
           "map_id": "002130",
           "reported": false,
           "votes": {
-            "DEM": 809,
+            "DEM": 810,
             "REP": 589,
             "LIB": 20
           }
@@ -6410,7 +6410,7 @@
           "reported": false,
           "votes": {
             "DEM": 1108,
-            "REP": 716,
+            "REP": 717,
             "LIB": 25
           }
         },
@@ -6419,8 +6419,8 @@
           "map_id": "002165",
           "reported": false,
           "votes": {
-            "DEM": 745,
-            "REP": 543,
+            "DEM": 746,
+            "REP": 545,
             "LIB": 22
           }
         },
@@ -6430,7 +6430,7 @@
           "reported": false,
           "votes": {
             "DEM": 878,
-            "REP": 582,
+            "REP": 583,
             "LIB": 16
           }
         },
@@ -6459,7 +6459,7 @@
           "map_id": "002195",
           "reported": false,
           "votes": {
-            "DEM": 1148,
+            "DEM": 1152,
             "REP": 586,
             "LIB": 19
           }
@@ -6469,7 +6469,7 @@
           "map_id": "002198",
           "reported": false,
           "votes": {
-            "DEM": 751,
+            "DEM": 752,
             "REP": 504,
             "LIB": 13
           }
@@ -6599,8 +6599,8 @@
           "map_id": "002300",
           "reported": false,
           "votes": {
-            "DEM": 573,
-            "REP": 367,
+            "DEM": 574,
+            "REP": 369,
             "LIB": 13
           }
         },
@@ -6699,7 +6699,7 @@
           "map_id": "002390",
           "reported": false,
           "votes": {
-            "DEM": 474,
+            "DEM": 475,
             "REP": 292,
             "LIB": 6
           }
@@ -6710,7 +6710,7 @@
           "reported": false,
           "votes": {
             "DEM": 382,
-            "REP": 341,
+            "REP": 342,
             "LIB": 17
           }
         },
@@ -7749,7 +7749,7 @@
           "reported": false,
           "votes": {
             "REP": 1089,
-            "DEM": 901
+            "DEM": 902
           }
         },
         {
@@ -8576,8 +8576,8 @@
           "map_id": "000950",
           "reported": false,
           "votes": {
-            "REP": 512,
-            "DEM": 490
+            "REP": 513,
+            "DEM": 491
           }
         },
         {
@@ -8783,7 +8783,7 @@
           "map_id": "001180",
           "reported": false,
           "votes": {
-            "REP": 873,
+            "REP": 875,
             "DEM": 516
           }
         },
@@ -8792,7 +8792,7 @@
           "map_id": "001184",
           "reported": false,
           "votes": {
-            "REP": 637,
+            "REP": 639,
             "DEM": 599
           }
         },
@@ -8810,7 +8810,7 @@
           "map_id": "001190",
           "reported": false,
           "votes": {
-            "REP": 628,
+            "REP": 630,
             "DEM": 586
           }
         },
@@ -8819,8 +8819,8 @@
           "map_id": "001200",
           "reported": false,
           "votes": {
-            "REP": 785,
-            "DEM": 514
+            "REP": 830,
+            "DEM": 577
           }
         },
         {
@@ -8829,7 +8829,7 @@
           "reported": false,
           "votes": {
             "REP": 903,
-            "DEM": 669
+            "DEM": 670
           }
         },
         {
@@ -9233,7 +9233,7 @@
           "map_id": "001652",
           "reported": false,
           "votes": {
-            "DEM": 614,
+            "DEM": 615,
             "REP": 502
           }
         },
@@ -9386,7 +9386,7 @@
           "map_id": "001790",
           "reported": false,
           "votes": {
-            "DEM": 806,
+            "DEM": 807,
             "REP": 770
           }
         },
@@ -9413,8 +9413,8 @@
           "map_id": "001820",
           "reported": false,
           "votes": {
-            "DEM": 641,
-            "REP": 527
+            "DEM": 642,
+            "REP": 528
           }
         },
         {
@@ -9728,8 +9728,8 @@
           "map_id": "002130",
           "reported": false,
           "votes": {
-            "DEM": 705,
-            "REP": 704
+            "DEM": 706,
+            "REP": 705
           }
         },
         {
@@ -9737,7 +9737,7 @@
           "map_id": "002140",
           "reported": false,
           "votes": {
-            "DEM": 666,
+            "DEM": 668,
             "REP": 581
           }
         },
@@ -9747,7 +9747,7 @@
           "reported": false,
           "votes": {
             "DEM": 936,
-            "REP": 901
+            "REP": 902
           }
         },
         {
@@ -9755,8 +9755,8 @@
           "map_id": "002165",
           "reported": false,
           "votes": {
-            "DEM": 655,
-            "REP": 643
+            "DEM": 656,
+            "REP": 645
           }
         },
         {
@@ -9791,8 +9791,8 @@
           "map_id": "002195",
           "reported": false,
           "votes": {
-            "DEM": 969,
-            "REP": 769
+            "DEM": 970,
+            "REP": 770
           }
         },
         {
@@ -9801,7 +9801,7 @@
           "reported": false,
           "votes": {
             "DEM": 635,
-            "REP": 630
+            "REP": 631
           }
         },
         {
@@ -9917,8 +9917,8 @@
           "map_id": "002300",
           "reported": false,
           "votes": {
-            "DEM": 514,
-            "REP": 432
+            "DEM": 515,
+            "REP": 433
           }
         },
         {
@@ -10007,8 +10007,8 @@
           "map_id": "002390",
           "reported": false,
           "votes": {
-            "DEM": 417,
-            "REP": 347
+            "DEM": 418,
+            "REP": 348
           }
         },
         {
@@ -11011,7 +11011,7 @@
           "map_id": "001652",
           "reported": false,
           "votes": {
-            "DEM": 567,
+            "DEM": 568,
             "REP": 545
           }
         },
@@ -12546,7 +12546,7 @@
           "map_id": "001790",
           "reported": false,
           "votes": {
-            "DEM": 908,
+            "DEM": 909,
             "REP": 661
           }
         },
@@ -12573,8 +12573,8 @@
           "map_id": "001820",
           "reported": false,
           "votes": {
-            "DEM": 702,
-            "REP": 454
+            "DEM": 703,
+            "REP": 455
           }
         },
         {
@@ -12582,7 +12582,7 @@
           "map_id": "001825",
           "reported": false,
           "votes": {
-            "DEM": 658,
+            "DEM": 660,
             "REP": 528
           }
         },
@@ -12700,7 +12700,7 @@
           "reported": false,
           "votes": {
             "DEM": 678,
-            "REP": 611
+            "REP": 613
           }
         },
         {
@@ -12709,7 +12709,7 @@
           "reported": false,
           "votes": {
             "DEM": 796,
-            "REP": 659
+            "REP": 660
           }
         },
         {
@@ -12726,7 +12726,7 @@
           "map_id": "002195",
           "reported": false,
           "votes": {
-            "DEM": 1060,
+            "DEM": 1063,
             "REP": 672
           }
         },
@@ -12735,8 +12735,8 @@
           "map_id": "002198",
           "reported": false,
           "votes": {
-            "DEM": 688,
-            "REP": 552
+            "DEM": 689,
+            "REP": 553
           }
         },
         {
@@ -13372,7 +13372,7 @@
           "reported": false,
           "votes": {
             "REP": 1048,
-            "DEM": 939
+            "DEM": 940
           }
         },
         {
@@ -13398,8 +13398,8 @@
           "map_id": "000950",
           "reported": false,
           "votes": {
-            "DEM": 532,
-            "REP": 467
+            "DEM": 535,
+            "REP": 468
           }
         },
         {
@@ -13443,8 +13443,8 @@
           "map_id": "001180",
           "reported": false,
           "votes": {
-            "REP": 845,
-            "DEM": 541
+            "REP": 847,
+            "DEM": 542
           }
         },
         {
@@ -13453,7 +13453,7 @@
           "reported": false,
           "votes": {
             "DEM": 638,
-            "REP": 582
+            "REP": 584
           }
         },
         {
@@ -13471,7 +13471,7 @@
           "reported": false,
           "votes": {
             "DEM": 626,
-            "REP": 578
+            "REP": 580
           }
         },
         {
@@ -13479,8 +13479,8 @@
           "map_id": "001200",
           "reported": false,
           "votes": {
-            "REP": 703,
-            "DEM": 592
+            "REP": 741,
+            "DEM": 658
           }
         },
         {
@@ -13489,7 +13489,7 @@
           "reported": false,
           "votes": {
             "REP": 852,
-            "DEM": 709
+            "DEM": 710
           }
         },
         {
@@ -13551,7 +13551,7 @@
           "map_id": "002130",
           "reported": false,
           "votes": {
-            "DEM": 730,
+            "DEM": 732,
             "REP": 669
           }
         },
@@ -13560,7 +13560,7 @@
           "map_id": "002140",
           "reported": false,
           "votes": {
-            "DEM": 712,
+            "DEM": 714,
             "REP": 535
           }
         },
@@ -13570,7 +13570,7 @@
           "reported": false,
           "votes": {
             "DEM": 1019,
-            "REP": 808
+            "REP": 809
           }
         },
         {
@@ -13686,7 +13686,7 @@
           "map_id": "002290",
           "reported": false,
           "votes": {
-            "DEM": 200,
+            "DEM": 202,
             "REP": 128
           }
         },
@@ -13695,8 +13695,8 @@
           "map_id": "002300",
           "reported": false,
           "votes": {
-            "DEM": 534,
-            "REP": 405
+            "DEM": 536,
+            "REP": 406
           }
         },
         {
@@ -13749,7 +13749,7 @@
           "map_id": "002390",
           "reported": false,
           "votes": {
-            "DEM": 432,
+            "DEM": 433,
             "REP": 334
           }
         },
@@ -13758,7 +13758,7 @@
           "map_id": "002400",
           "reported": false,
           "votes": {
-            "REP": 379,
+            "REP": 380,
             "DEM": 351
           }
         },
@@ -15491,7 +15491,7 @@
           "map_id": "001652",
           "reported": false,
           "votes": {
-            "DEM": 615,
+            "DEM": 616,
             "REP": 501
           }
         },
@@ -15635,8 +15635,8 @@
           "map_id": "000010",
           "reported": false,
           "votes": {
-            "REP": 1098,
-            "DEM": 878,
+            "REP": 1099,
+            "DEM": 879,
             "FWD": 30
           }
         },
@@ -15655,9 +15655,9 @@
           "map_id": "000950",
           "reported": false,
           "votes": {
-            "DEM": 508,
-            "REP": 490,
-            "FWD": 24
+            "DEM": 510,
+            "REP": 491,
+            "FWD": 25
           }
         },
         {
@@ -15665,8 +15665,8 @@
           "map_id": "001180",
           "reported": false,
           "votes": {
-            "REP": 866,
-            "DEM": 508,
+            "REP": 869,
+            "DEM": 509,
             "FWD": 22
           }
         },
@@ -15676,7 +15676,7 @@
           "reported": false,
           "votes": {
             "DEM": 603,
-            "REP": 581,
+            "REP": 583,
             "FWD": 52
           }
         },
@@ -15696,8 +15696,8 @@
           "reported": false,
           "votes": {
             "DEM": 608,
-            "REP": 588,
-            "FWD": 26
+            "REP": 590,
+            "FWD": 27
           }
         },
         {
@@ -15705,9 +15705,9 @@
           "map_id": "001200",
           "reported": false,
           "votes": {
-            "REP": 746,
-            "DEM": 545,
-            "FWD": 14
+            "REP": 787,
+            "DEM": 609,
+            "FWD": 17
           }
         },
         {
@@ -15716,7 +15716,7 @@
           "reported": false,
           "votes": {
             "REP": 886,
-            "DEM": 666,
+            "DEM": 669,
             "FWD": 27
           }
         },
@@ -15725,7 +15725,7 @@
           "map_id": "001790",
           "reported": false,
           "votes": {
-            "DEM": 846,
+            "DEM": 847,
             "REP": 708,
             "FWD": 36
           }
@@ -15735,8 +15735,8 @@
           "map_id": "001820",
           "reported": false,
           "votes": {
-            "DEM": 676,
-            "REP": 473,
+            "DEM": 678,
+            "REP": 474,
             "FWD": 24
           }
         },
@@ -15745,7 +15745,7 @@
           "map_id": "001825",
           "reported": false,
           "votes": {
-            "DEM": 625,
+            "DEM": 628,
             "REP": 550,
             "FWD": 23
           }
@@ -15755,7 +15755,7 @@
           "map_id": "002130",
           "reported": false,
           "votes": {
-            "DEM": 702,
+            "DEM": 705,
             "REP": 688,
             "FWD": 30
           }
@@ -15765,7 +15765,7 @@
           "map_id": "002140",
           "reported": false,
           "votes": {
-            "DEM": 683,
+            "DEM": 686,
             "REP": 544,
             "FWD": 30
           }
@@ -15776,7 +15776,7 @@
           "reported": false,
           "votes": {
             "DEM": 974,
-            "REP": 846,
+            "REP": 847,
             "FWD": 31
           }
         },
@@ -15785,8 +15785,8 @@
           "map_id": "002165",
           "reported": false,
           "votes": {
-            "REP": 645,
-            "DEM": 633,
+            "REP": 647,
+            "DEM": 634,
             "FWD": 35
           }
         },
@@ -15795,7 +15795,7 @@
           "map_id": "002173",
           "reported": false,
           "votes": {
-            "REP": 741,
+            "REP": 743,
             "DEM": 710,
             "FWD": 24
           }
@@ -15815,8 +15815,8 @@
           "map_id": "002195",
           "reported": false,
           "votes": {
-            "DEM": 981,
-            "REP": 703,
+            "DEM": 986,
+            "REP": 704,
             "FWD": 68
           }
         },
@@ -15826,7 +15826,7 @@
           "reported": false,
           "votes": {
             "DEM": 621,
-            "REP": 609,
+            "REP": 611,
             "FWD": 36
           }
         },
@@ -15845,7 +15845,7 @@
           "map_id": "002290",
           "reported": false,
           "votes": {
-            "DEM": 192,
+            "DEM": 194,
             "REP": 131,
             "FWD": 5
           }
@@ -15855,8 +15855,8 @@
           "map_id": "002300",
           "reported": false,
           "votes": {
-            "DEM": 518,
-            "REP": 416,
+            "DEM": 519,
+            "REP": 419,
             "FWD": 20
           }
         },
@@ -15875,8 +15875,8 @@
           "map_id": "002390",
           "reported": false,
           "votes": {
-            "DEM": 418,
-            "REP": 346,
+            "DEM": 419,
+            "REP": 347,
             "FWD": 8
           }
         },
@@ -15885,7 +15885,7 @@
           "map_id": "002400",
           "reported": false,
           "votes": {
-            "REP": 397,
+            "REP": 398,
             "DEM": 331,
             "FWD": 13
           }
@@ -16765,5 +16765,5 @@
       "mock": false
     }
   ],
-  "last_source_update_utc": "2026-11-04T18:41:25Z"
+  "last_source_update_utc": "2026-11-04T21:21:25Z"
 }
