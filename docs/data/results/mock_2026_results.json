@@ -7242,7 +7242,7 @@
         }
       ],
       "total_mapped_precincts": 359,
-      "reporting_precincts": 50,
+      "reporting_precincts": 55,
       "coverage_counties": [
         9,
         46
@@ -7262,7 +7262,7 @@
           "map_id": "101",
           "reported": true,
           "votes": {
-            "DEM": 466,
+            "DEM": 468,
             "REP": 442
           }
         },
@@ -7272,7 +7272,7 @@
           "reported": true,
           "votes": {
             "DEM": 311,
-            "REP": 400
+            "REP": 401
           }
         },
         {
@@ -7296,10 +7296,10 @@
         {
           "county_code": 46,
           "map_id": "110",
-          "reported": false,
+          "reported": true,
           "votes": {
-            "DEM": 78,
-            "REP": 25
+            "DEM": 288,
+            "REP": 253
           }
         },
         {
@@ -7308,7 +7308,7 @@
           "reported": true,
           "votes": {
             "DEM": 236,
-            "REP": 179
+            "REP": 181
           }
         },
         {
@@ -7317,7 +7317,7 @@
           "reported": true,
           "votes": {
             "DEM": 520,
-            "REP": 414
+            "REP": 415
           }
         },
         {
@@ -7325,17 +7325,17 @@
           "map_id": "113",
           "reported": true,
           "votes": {
-            "DEM": 422,
-            "REP": 378
+            "DEM": 607,
+            "REP": 613
           }
         },
         {
           "county_code": 46,
           "map_id": "114",
-          "reported": false,
+          "reported": true,
           "votes": {
-            "DEM": 98,
-            "REP": 25
+            "DEM": 408,
+            "REP": 277
           }
         },
         {
@@ -7343,17 +7343,17 @@
           "map_id": "115",
           "reported": true,
           "votes": {
-            "DEM": 740,
+            "DEM": 741,
             "REP": 628
           }
         },
         {
           "county_code": 46,
           "map_id": "116",
-          "reported": false,
+          "reported": true,
           "votes": {
-            "DEM": 116,
-            "REP": 79
+            "DEM": 378,
+            "REP": 358
           }
         },
         {
@@ -7370,8 +7370,8 @@
           "map_id": "118",
           "reported": true,
           "votes": {
-            "DEM": 709,
-            "REP": 491
+            "DEM": 726,
+            "REP": 494
           }
         },
         {
@@ -7386,10 +7386,10 @@
         {
           "county_code": 46,
           "map_id": "120",
-          "reported": false,
+          "reported": true,
           "votes": {
-            "DEM": 102,
-            "REP": 52
+            "DEM": 367,
+            "REP": 349
           }
         },
         {
@@ -7398,7 +7398,7 @@
           "reported": true,
           "votes": {
             "DEM": 306,
-            "REP": 284
+            "REP": 285
           }
         },
         {
@@ -7424,7 +7424,7 @@
           "map_id": "124",
           "reported": true,
           "votes": {
-            "DEM": 794,
+            "DEM": 796,
             "REP": 616
           }
         },
@@ -7442,7 +7442,7 @@
           "map_id": "126",
           "reported": true,
           "votes": {
-            "DEM": 293,
+            "DEM": 294,
             "REP": 263
           }
         },
@@ -7451,7 +7451,7 @@
           "map_id": "128",
           "reported": true,
           "votes": {
-            "DEM": 453,
+            "DEM": 455,
             "REP": 327
           }
         },
@@ -7514,8 +7514,8 @@
           "map_id": "137",
           "reported": true,
           "votes": {
-            "DEM": 402,
-            "REP": 246
+            "DEM": 407,
+            "REP": 247
           }
         },
         {
@@ -7523,8 +7523,8 @@
           "map_id": "237",
           "reported": true,
           "votes": {
-            "DEM": 686,
-            "REP": 1015
+            "DEM": 706,
+            "REP": 1026
           }
         },
         {
@@ -7532,7 +7532,7 @@
           "map_id": "238",
           "reported": true,
           "votes": {
-            "DEM": 568,
+            "DEM": 569,
             "REP": 385
           }
         },
@@ -7541,7 +7541,7 @@
           "map_id": "239",
           "reported": true,
           "votes": {
-            "DEM": 878,
+            "DEM": 879,
             "REP": 612
           }
         },
@@ -7550,17 +7550,17 @@
           "map_id": "240",
           "reported": true,
           "votes": {
-            "DEM": 1289,
+            "DEM": 1291,
             "REP": 804
           }
         },
         {
           "county_code": 46,
           "map_id": "241",
-          "reported": false,
+          "reported": true,
           "votes": {
-            "DEM": 146,
-            "REP": 107
+            "DEM": 418,
+            "REP": 428
           }
         },
         {
@@ -7577,8 +7577,8 @@
           "map_id": "243",
           "reported": true,
           "votes": {
-            "DEM": 785,
-            "REP": 552
+            "DEM": 786,
+            "REP": 554
           }
         },
         {
@@ -7586,8 +7586,8 @@
           "map_id": "244",
           "reported": true,
           "votes": {
-            "DEM": 1008,
-            "REP": 674
+            "DEM": 1305,
+            "REP": 953
           }
         },
         {
@@ -7595,7 +7595,7 @@
           "map_id": "245",
           "reported": true,
           "votes": {
-            "DEM": 1595,
+            "DEM": 1600,
             "REP": 997
           }
         },
@@ -7604,7 +7604,7 @@
           "map_id": "267",
           "reported": true,
           "votes": {
-            "DEM": 660,
+            "DEM": 664,
             "REP": 631
           }
         },
@@ -7640,7 +7640,7 @@
           "map_id": "300",
           "reported": true,
           "votes": {
-            "DEM": 497,
+            "DEM": 498,
             "REP": 433
           }
         },
@@ -7658,8 +7658,8 @@
           "map_id": "317",
           "reported": true,
           "votes": {
-            "DEM": 537,
-            "REP": 483
+            "DEM": 546,
+            "REP": 486
           }
         },
         {
@@ -7667,8 +7667,8 @@
           "map_id": "355",
           "reported": true,
           "votes": {
-            "DEM": 1126,
-            "REP": 1253
+            "DEM": 1132,
+            "REP": 1254
           }
         },
         {
@@ -7676,7 +7676,7 @@
           "map_id": "356",
           "reported": true,
           "votes": {
-            "DEM": 310,
+            "DEM": 311,
             "REP": 426
           }
         },
@@ -7685,7 +7685,7 @@
           "map_id": "357",
           "reported": true,
           "votes": {
-            "DEM": 326,
+            "DEM": 327,
             "REP": 519
           }
         },
@@ -7694,8 +7694,8 @@
           "map_id": "86",
           "reported": true,
           "votes": {
-            "DEM": 591,
-            "REP": 481
+            "DEM": 599,
+            "REP": 484
           }
         },
         {
@@ -7704,7 +7704,7 @@
           "reported": true,
           "votes": {
             "DEM": 233,
-            "REP": 448
+            "REP": 449
           }
         },
         {
@@ -7712,7 +7712,7 @@
           "map_id": "96",
           "reported": true,
           "votes": {
-            "DEM": 496,
+            "DEM": 497,
             "REP": 550
           }
         },
@@ -7721,7 +7721,7 @@
           "map_id": "97",
           "reported": true,
           "votes": {
-            "DEM": 425,
+            "DEM": 426,
             "REP": 600
           }
         },
@@ -7731,7 +7731,7 @@
           "reported": true,
           "votes": {
             "DEM": 280,
-            "REP": 442
+            "REP": 443
           }
         },
         {
@@ -7739,8 +7739,8 @@
           "map_id": "99",
           "reported": true,
           "votes": {
-            "DEM": 368,
-            "REP": 523
+            "DEM": 369,
+            "REP": 525
           }
         },
         {
@@ -16765,5 +16765,5 @@
       "mock": false
     }
   ],
-  "last_source_update_utc": "2026-11-04T05:51:25Z"
+  "last_source_update_utc": "2026-11-04T06:11:25Z"
 }
