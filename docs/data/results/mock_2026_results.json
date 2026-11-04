@@ -7233,7 +7233,7 @@
         }
       ],
       "total_mapped_precincts": 359,
-      "reporting_precincts": 34,
+      "reporting_precincts": 35,
       "coverage_counties": [
         9,
         46
@@ -7278,10 +7278,10 @@
         {
           "county_code": 46,
           "map_id": "109",
-          "reported": false,
+          "reported": true,
           "votes": {
-            "DEM": 142,
-            "REP": 91
+            "DEM": 213,
+            "REP": 159
           }
         },
         {
@@ -7595,8 +7595,8 @@
           "map_id": "267",
           "reported": true,
           "votes": {
-            "DEM": 444,
-            "REP": 374
+            "DEM": 651,
+            "REP": 626
           }
         },
         {
@@ -7658,8 +7658,8 @@
           "map_id": "355",
           "reported": true,
           "votes": {
-            "DEM": 662,
-            "REP": 585
+            "DEM": 1103,
+            "REP": 1242
           }
         },
         {
@@ -16756,5 +16756,5 @@
       "mock": false
     }
   ],
-  "last_source_update_utc": "2026-11-04T05:01:25Z"
+  "last_source_update_utc": "2026-11-04T05:11:25Z"
 }
