@@ -347,7 +347,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (level === "race" && race.coverage_counties.length > 1) destination = "county";
         const action = destination === "county" ? "Click to view county results" : "Click to view precinct results";
         const details = `<div class="precinct-popup"><strong>${escapeHtml(label)}</strong><hr>${line}
-            <div>${formatNumber(aggregate.reported)} of ${formatNumber(aggregate.total)} precincts reporting</div>
             ${lead}<hr><strong>${action}</strong></div>`;
         const baseStyle = {
             fillColor: precinctColor(margin(aggregate.votes, race), totalVotes > 0),
