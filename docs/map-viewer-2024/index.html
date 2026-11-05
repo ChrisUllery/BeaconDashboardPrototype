@@ -1,0 +1,75 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2024 Election Results Explorer | The Beacon</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="../assets/css/standalone-map.css">
+  <link rel="stylesheet" href="../assets/css/standalone-map-2024.css?v=20261105year1">
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+  <script src="../assets/js/standalone-map-2024.js?v=20261105year1" defer></script>
+  <script src="../assets/js/standalone-downloads-2024.js?v=20261105year1" defer></script>
+</head>
+<body>
+  <main class="map-shell" aria-label="2024 election results explorer">
+
+    <section id="map-controls" class="map-controls" aria-label="Choose election results">
+      <label for="election-year-select">Election year
+        <select id="election-year-select" aria-label="Select election year">
+          <option value="2024" selected>2024</option>
+          <option value="2026">2026 (unofficial)</option>
+        </select>
+      </label>
+      <label for="map-race-select">Race
+        <select id="map-race-select" aria-label="Select election race"></select>
+      </label>
+      <label for="map-view-select">Map geography
+        <select id="map-view-select" aria-label="Select map geography"></select>
+      </label>
+    </section>
+
+    <div class="map-stage">
+      <div id="election-map" class="election-map" aria-label="Map of the selected election race"></div>
+      <span class="simulated-label">2024 GENERAL ELECTION RESULTS</span>
+      <button id="return-to-overview" class="return-button" type="button" hidden>Back to overview</button>
+      <div class="legend" id="map-legend" aria-label="Election map color legend" hidden></div>
+      <div class="load-status" id="map-status" role="status">Loading election map...</div>
+    </div>
+
+    <section class="data-workspace" aria-label="Election results and downloads">
+
+      <section class="results-card">
+        <header class="panel-heading">
+          <h2>Election results</h2>
+          <p>Results for the selected race and geographic level.</p>
+        </header>
+        <div id="results-table-panel" class="results-table-panel">
+          <table id="results-table">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <aside class="downloads-card" aria-label="Download election data">
+        <header class="panel-heading">
+          <h2>Download data</h2>
+          <p>Results and geographic boundaries.</p>
+        </header>
+        <div class="download-list">
+          <div>Blank GeoJSON for selected map</div>
+          <div>Results CSV for selected race</div>
+          <div>Results GeoJSON for selected race</div>
+          <div>All races, precinct-level CSV</div>
+          <div>All available precinct boundaries</div>
+        </div>
+      </aside>
+
+    </section>
+  </main>
+</body>
+</html>
